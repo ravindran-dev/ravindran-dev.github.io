@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "JetBrains Mono", monospace;
+}
+
+body {
+  background: #0f111a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.terminal {
+  width: 90%;
+  max-width: 900px;
+  background: #11111b;
+  border-radius: 14px;                 /* rounded rectangle */
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.75),   /* deep black glow */
+    0 0 0 1px rgba(255, 255, 255, 0.05); /* subtle border */
+  overflow: hidden;                    /* keeps palette rounded */
+}
+
+
+.bar {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  background: #1e1e2e;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.red { background: #f38ba8; }
+.yellow { background: #f9e2af; }
+.green { background: #a6e3a1; }
+
+.title {
+  margin-left: 10px;
+  color: #cdd6f4;
+  font-size: 14px;
+}
+
+.content {
+  padding: 20px;
+  color: #cdd6f4;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.user {
+  color: #1793d1;
+}
+
+.path {
+  color: #5fd7ff;
+}
+
+.output {
+  margin-left: 15px;
+  color: #a6adc8;
+  white-space: pre-wrap;
+}
+
+pre.output {
+  margin-left: 15px;
+}
+
+.cursor {
+  color: #1793d1;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+.cursor {
+  color: #1793d1;
+  margin-left: 20px;
+  animation: blink 1s infinite;
+}
+pre.output a {
+  color: #89b4fa;
+  text-decoration: none;
+}
+
+pre.output a:hover {
+  text-decoration: underline;
+}
+
+.label {
+  color: #cdd6f4;
+}
+.prompt {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.arch {
+  color: #1793d1; /* Arch blue */
+  font-size: 16px;
+}
+
+.userhost {
+  color: #89b4fa;
+  font-weight: 600;
+}
+
+.cwd {
+  color: #a6e3a1;
+}
+
+.prompt-symbol {
+  color: #f5c2e7;
+  font-weight: bold;
+}
+.arch-icon {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 4px;
+}
