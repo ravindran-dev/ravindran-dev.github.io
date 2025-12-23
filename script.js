@@ -14,7 +14,10 @@ Kernel: 6.x
 Shell: zsh
 WM: Wayland
 Editor: Neovim
-Languages: Rust, Python, C++
+Languages: C++, Python, Rust, Java, JavaScript, HTML, CSS
+Machine Learning: PyTorch, TensorFlow, Scikit-learn
+Web: React, Node.js
+Database: PostgreSQL, MongoDB
 `,
     pre: true
   },
@@ -40,7 +43,7 @@ skills
 ├── python.txt
 ├── rust.txt
 ├── linux.txt
-└── web.txt
+└── web development.txt
 `,
     pre: true
   },
@@ -49,9 +52,10 @@ skills
     out: `
 projects
 ├── todo-tui (Rust)
-├── drone-object-detection (CV)
+├── drone-object-detection (CV + ML + DL)
 ├── Mining LCA tool (SIH)
-├── Linux Config tools (NVIM, TMUX)
+├── Linux Config tools (NVIM, TMUX, dotfiles)
+├── SmartSpend (React + Flask + ML)
 └── spam-detection-webapp (ML + React)
 `,
     pre: true
