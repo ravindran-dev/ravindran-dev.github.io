@@ -69,7 +69,8 @@ projects
 <span class="label">Email</span>     : <a href="mailto:ravindrans.dev@gmail.com">Mail me</a>
 `,
   pre: true,
-  html: true
+  html: true,
+  animate: false
 }
 
 
