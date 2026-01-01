@@ -1,4 +1,3 @@
-/* ===== RESET & FONT ===== */
 * {
   margin: 0;
   padding: 0;
@@ -6,9 +5,8 @@
   font-family: "JetBrains Mono", monospace;
 }
 
-/* ===== PAGE BACKGROUND ===== */
 body {
-  background: #000; /* true black */
+  background: #000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,18 +14,15 @@ body {
   color: #e5e7eb;
 }
 
-/* ===== TERMINAL CONTAINER ===== */
 .terminal {
   width: 88%;
-  max-width: 860px;          /* more compact */
+  max-width: 860px;
   background: #000;
   border-radius: 14px;
-
   box-shadow:
     0 0 0 1px rgba(56, 189, 248, 0.35),
     0 0 18px rgba(56, 189, 248, 0.18),
     0 30px 60px rgba(0, 0, 0, 0.9);
-
   overflow: hidden;
 }
 
@@ -37,14 +32,11 @@ body {
   inset: 0;
   border-radius: 14px;
   pointer-events: none;
-
   box-shadow:
     inset 0 0 0 1px rgba(255, 255, 255, 0.04),
     inset 0 0 20px rgba(56, 189, 248, 0.06);
 }
 
-
-/* ===== TOP BAR (ZSH STYLE) ===== */
 .bar {
   position: relative;
 }
@@ -67,7 +59,6 @@ body {
   text-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
 }
 
-/* Optional window dots (still look good on black) */
 .dot {
   width: 10px;
   height: 10px;
@@ -86,16 +77,13 @@ body {
   opacity: 0.9;
 }
 
-/* ===== CONTENT AREA ===== */
 .content {
-  padding: 16px 18px;        /* tighter spacing */
+  padding: 16px 18px;
   font-size: 14px;
   line-height: 1.65;
   color: #e5e7eb;
 }
 
-
-/* ===== PROMPT (ZSH / POWERLEVEL STYLE) ===== */
 .prompt {
   display: inline-flex;
   align-items: center;
@@ -109,7 +97,7 @@ body {
 }
 
 .arch {
-  color: #38bdf8; /* arch blue */
+  color: #38bdf8;
   font-size: 16px;
 }
 
@@ -119,7 +107,7 @@ body {
 }
 
 .cwd {
-  color: #22c55e; /* green */
+  color: #22c55e;
 }
 
 .prompt-symbol {
@@ -127,7 +115,6 @@ body {
   font-weight: bold;
 }
 
-/* ===== OUTPUT TEXT ===== */
 .output {
   margin-left: 18px;
   color: #e5e7eb;
@@ -140,7 +127,6 @@ pre.output {
   white-space: pre;
 }
 
-/* ===== CLICKABLE LINKS (contact.sh) ===== */
 pre.output a {
   color: #22f7ff;
   text-shadow: 0 0 8px rgba(34, 247, 255, 0.55);
@@ -148,19 +134,15 @@ pre.output a {
   text-decoration: none;
 }
 
-
 pre.output a:hover {
   text-shadow: 0 0 12px rgba(34, 247, 255, 0.8);
 }
-
-
 
 .label {
   color: #ffffff;
   font-weight: 500;
 }
 
-/* ===== CURSOR ===== */
 .cursor {
   color: #22c55e;
   margin-left: 20px;
@@ -168,7 +150,6 @@ pre.output a:hover {
   animation: blink 1s steps(1) infinite;
 }
 
-/* ===== ANIMATIONS ===== */
 @keyframes blink {
   0%, 50%, 100% { opacity: 1; }
   25%, 75% { opacity: 0; }
@@ -179,7 +160,7 @@ pre.output a:hover {
   to { opacity: 1; }
 }
 .userhost {
-  color: #67e8f9;            /* near-white */
+  color: #67e8f9;
   font-weight: 600;
   text-shadow: 0 0 6px rgba(248, 250, 252, 0.25);
 }
