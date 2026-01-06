@@ -63,7 +63,7 @@ projects
   {
   cmd: "./contact.sh",
   out: `
-<span class="label">Resume</span>    : <a href="https://docs.google.com/document/d/1rAVuu7cZYGYkGqxK24-MLWHf3SxamPqXdVYZm1or89w/edit?usp=sharing" target="_blank">Click here...</a>
+<span class="label">Resume</span>    : <a href="https://drive.google.com/file/d/1iPCWk2Js08XL8qDtA_fCnM6X0W_YCQig/view?usp=sharing" target="_blank">Click here...</a>
 <span class="label">GitHub</span>    : <a href="https://github.com/ravindran-dev" target="_blank">profile</a>
 <span class="label">LinkedIn</span>  : <a href="https://www.linkedin.com/in/ravindran-s-982702327" target="_blank">For more details...</a>
 <span class="label">Email</span>     : <a href="mailto:ravindrans.dev@gmail.com">Mail me</a>
