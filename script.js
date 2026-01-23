@@ -91,7 +91,7 @@ async function typeCommand(command) {
         <i class="fa-regular fa-clock nf-icon" style="color: #a78bfa; text-shadow: 0 0 10px rgba(167, 139, 250, 0.8);"></i> ${getTime()}
       </span>
       <span class="segment user">
-        <i class="fa-solid fa-user nf-icon" style="color: #22c55e; text-shadow: 0 0 10px rgba(34, 197, 94, 0.8);"></i> ravi@sai
+        <i class="fa-solid fa-user nf-icon" style="color: #22c55e; text-shadow: 0 0 10px rgba(34, 197, 94, 0.8);"></i> ravindran@s
       </span>
       <span class="segment cwd">
         <i class="fa-solid fa-folder nf-icon" style="color: #facc15; text-shadow: 0 0 10px rgba(250, 204, 21, 0.8);"></i> ~
