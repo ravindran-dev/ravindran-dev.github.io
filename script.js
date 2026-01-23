@@ -61,38 +61,41 @@ projects
     pre: true
   },
   {
-  cmd: "./contact.sh",
-  out: `
+    cmd: "./contact.sh",
+    out: `
 <span class="label">Resume</span>    : <a href="https://drive.google.com/file/d/1iPCWk2Js08XL8qDtA_fCnM6X0W_YCQig/view?usp=sharing" target="_blank">Click here...</a>
-<span class="label">GitHub</span>    : <a href="https://github.com/ravindran-dev" target="_blank">profile</a>
-<span class="label">LinkedIn</span>  : <a href="https://www.linkedin.com/in/ravindran-s-982702327" target="_blank">For more details...</a>
-<span class="label">Email</span>     : <a href="mailto:ravindrans.dev@gmail.com">Mail me</a>
+<span class="label">GitHub</span>     : <a href="https://github.com/ravindran-dev" target="_blank">profile</a>
+<span class="label">LinkedIn</span>   : <a href="https://www.linkedin.com/in/ravindran-s-982702327" target="_blank">For more details...</a>
+<span class="label">Email</span>      : <a href="mailto:ravindrans.dev@gmail.com">Mail me</a>
 `,
-  pre: true,
-  html: true,
-  animate: false
-}
-
-
-
+    pre: true,
+    html: true,
+    animate: false
+  }
 ];
 
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+const getTime = () =>
+  new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
 
 async function typeCommand(command) {
   const line = document.createElement("p");
 
   line.innerHTML = `
     <span class="prompt">
-      <span class="arch-icon">
-        <svg width="14" height="14" viewBox="0 0 128 128" fill="#1793d1" xmlns="http://www.w3.org/2000/svg">
-          <path d="M64 0C51 33 39 59 18 88c13-5 26-8 39-10 5 11 9 23 7 40 6-10 14-21 20-32 13 3 26 7 44 14C102 69 77 33 64 0z"/>
-        </svg>
+      <span class="segment os">
+        <i class="fa-brands fa-linux nf-icon" style="color: #38bdf8; text-shadow: 0 0 10px rgba(56, 189, 248, 0.8);"></i> Arch Linux
       </span>
-      <span class="userhost">ravi@archlinux</span>
-      <span class="cwd">~</span>
+      <span class="segment time">
+        <i class="fa-regular fa-clock nf-icon" style="color: #a78bfa; text-shadow: 0 0 10px rgba(167, 139, 250, 0.8);"></i> ${getTime()}
+      </span>
+      <span class="segment user">
+        <i class="fa-solid fa-user nf-icon" style="color: #22c55e; text-shadow: 0 0 10px rgba(34, 197, 94, 0.8);"></i> ravi@sai
+      </span>
+      <span class="segment cwd">
+        <i class="fa-solid fa-folder nf-icon" style="color: #facc15; text-shadow: 0 0 10px rgba(250, 204, 21, 0.8);"></i> ~
+      </span>
       <span class="prompt-symbol">❯</span>
     </span>
   `;
@@ -105,16 +108,14 @@ async function typeCommand(command) {
   }
 }
 
-
-
 async function printOutput(text, animate, pre, html = false) {
   const el = document.createElement(pre ? "pre" : "p");
   el.className = "output";
   terminal.appendChild(el);
 
   if (html) {
-    // Render raw HTML (for contact.sh only)
     el.innerHTML = text.trim();
+    terminal.scrollTop = terminal.scrollHeight;
     return;
   }
 
@@ -123,19 +124,20 @@ async function printOutput(text, animate, pre, html = false) {
     for (const w of words) {
       el.innerText += w + " ";
       await sleep(120);
+      terminal.scrollTop = terminal.scrollHeight;
     }
   } else {
     el.innerText = text.trim();
   }
-}
 
+  terminal.scrollTop = terminal.scrollHeight;
+}
 
 async function runTerminal() {
   for (const step of script) {
     await typeCommand(step.cmd);
     await sleep(300);
     await printOutput(step.out, step.animate, step.pre, step.html);
-
     await sleep(600);
   }
 }
