@@ -12,12 +12,12 @@ const script = [
 OS: Arch Linux x86_64
 Kernel: 6.x
 Shell: zsh
-WM: Wayland
+WM: Hyprland
 Editor: Neovim
-Languages: C++, Python, Rust, Java, JavaScript, HTML, CSS
-Machine Learning: PyTorch, TensorFlow, Scikit-learn
+Languages: C++, Python, Rust, Golang, Java, JavaScript, HTML, CSS
+Machine Learning: PyTorch, TensorFlow, Scikit-learn, Pandas
 Web: React, Node.js
-Database: PostgreSQL, MongoDB
+Database: PostgreSQL, MongoDB, Sqlite
 `,
     pre: true
   },
@@ -40,8 +40,10 @@ I build efficient, minimal, production-ready software.
     out: `
 skills
 ├── machine-learning.txt
+├── Deep Learning.txt
 ├── python.txt
 ├── rust.txt
+├── Golang.txt
 ├── linux.txt
 └── web development.txt
 `,
@@ -51,12 +53,13 @@ skills
     cmd: "tree projects/",
     out: `
 projects
+├── GenuineGate (Golang) (Real-time anti-scalping bot protection)
 ├── todo-tui (Rust)
-├── drone-object-detection (CV + ML + DL)
-├── Mining LCA tool (SIH)
+├── Microdet (drone-object-detection) (CV + ML + DL)
+├── Mining LCA tool (SIH) (RAG + Python + React)
 ├── Linux Config tools (NVIM, TMUX, dotfiles)
 ├── SmartSpend (React + Flask + ML)
-└── spam-detection-webapp (ML + React)
+└── SpamZero (spam-detection-webapp) (ML + React)
 `,
     pre: true
   },
