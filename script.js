@@ -3,23 +3,26 @@ const terminal = document.getElementById("terminal");
 const script = [
   {
     cmd: "whoami",
-    out: "ML Engineer | Rust | Linux | Open Source",
+    out: "AI/ML Engineer | Backend Developer | Systems Programmer | Open Source Contributor",
     animate: true
   },
   {
     cmd: "fastfetch",
     out: `
 OS: Arch Linux x86_64
-Kernel: 6.x
+Kernel: 6.18.7
 Shell: zsh
 WM: Hyprland
 Editor: Neovim
-Languages: C++, Python, Rust, Golang, Java, JavaScript, HTML, CSS
-Machine Learning: PyTorch, TensorFlow, Scikit-learn, Pandas
-Web: React, Node.js
-Database: PostgreSQL, MongoDB, Sqlite
+Languages: Python, Rust, Golang, C++, Java, JavaScript, TypeScript
+AI & ML: PyTorch, TensorFlow, Scikit-learn, Pandas, NumPy, OpenCV, Pytorch Lightning, Hugging Face, RAG
+Backend: Flask, FastAPI, Node.js, Express.js, MQTT, REST APIs
+Frontend: React, HTML, CSS, Tailwind, Kotlin (Android)
+Database: PostgreSQL, MongoDB, SQLite, Firebase
+DevOps: Docker, Git, Linux, CI/CD
 `,
-    pre: true
+    pre: true,
+    animate: true
   },
   {
     cmd: "ls",
@@ -29,51 +32,72 @@ Database: PostgreSQL, MongoDB, Sqlite
   {
     cmd: "cat about.md",
     out: `
-I am Ravindran, an AIML undergraduate passionate about Linux,
-Machine Learning, Rust systems programming, and open-source development.
-I build efficient, minimal, production-ready software.
+Ravindran S | B.E AI & ML (2024-2028) | CGPA: 9.24/10
+Chennai Institute of Technology, Chennai
+Passionate about AI/ML, systems programming, and building scalable solutions.
+Experience in full-stack development, computer vision, and backend systems.
+Active open-source contributor and Linux enthusiast.
 `,
+pre: true,
     animate: true
   },
   {
     cmd: "tree skills/",
     out: `
-skills
-├── machine-learning.txt
-├── Deep Learning.txt
-├── python.txt
-├── rust.txt
-├── Golang.txt
-├── linux.txt
-└── web development.txt
+skills/
+├── ai-ml/
+│   ├── machine-learning.txt
+│   ├── deep-learning.txt
+│   ├── computer-vision.txt
+│   └── rag-systems.txt
+├── backend/
+│   ├── golang.txt
+│   ├── rust.txt
+│   ├── python.txt
+│   └── MQTT & APIs.txt
+├── frontend/
+│   ├── react.txt
+│   └── Mern stack.txt
+├── systems/
+│   ├── linux.txt
+│   └── docker.txt
+└── cloud/
+    ├── gcp.txt
+    └── aws.txt
 `,
     pre: true
   },
   {
     cmd: "tree projects/",
     out: `
-projects
-├── GenuineGate (Golang) (Real-time anti-scalping bot protection)
-├── todo-tui (Rust)
-├── Microdet (drone-object-detection) (CV + ML + DL)
-├── Mining LCA tool (SIH) (RAG + Python + React)
-├── Linux Config tools (NVIM, TMUX, dotfiles)
-├── SmartSpend (React + Flask + ML)
-└── SpamZero (spam-detection-webapp) (ML + React)
+projects/
+├── GenuineGate (Golang + WebSocket)
+│   └── Real-time bot detection system with 40% faster response time
+│       Tech: Golang, Gin, WebSocket, PostgreSQL
+├── Microdet (PyTorch + OpenCV)
+│   └── Drone-based object detection for border security
+│       92% accuracy | YOLOv8 + CNN | Smart India Hackathon
+├── Mining LCA Tool (RAG + Full-Stack)
+│   └── Life cycle assessment platform for mining industry
+│       Tech: Python, React, RAG, Vector DB
+├── SpamZero (ML + React)
+│   └── Real-time spam detection with 95% accuracy
+│       Tech: Scikit-learn, Flask, React
+├── SmartSpend (ML + Full-Stack)
+│   └── Expense tracking with ML-powered insights
+│       Tech: Flask, React, ML algorithms
+└── Linux Tools & Dotfiles
+    └── Neovim, Tmux, and system configurations
+        Rust TUI apps for productivity
 `,
     pre: true
   },
   {
     cmd: "./contact.sh",
-    out: `
-<span class="label">Resume</span>    : <a href="https://drive.google.com/file/d/1Y80nu3vjU-frqBjsiXBHTfU7BrL0pwFP/view?usp=sharing" target="_blank">Click here...</a>
-<span class="label">GitHub</span>     : <a href="https://github.com/ravindran-dev" target="_blank">profile</a>
-<span class="label">LinkedIn</span>   : <a href="https://www.linkedin.com/in/ravindran-s-982702327" target="_blank">For more details...</a>
-<span class="label">Email</span>      : <a href="mailto:ravindrans.dev@gmail.com">Mail me</a>
-`,
-    pre: true,
+    out: `| <a href="https://drive.google.com/file/d/1Rqxarjk0PSaIYBJ1Z-3mvlVPjFMRTUbn/view?usp=sharing" target="_blank"><span class="label">Resume</span></a> | <a href="https://github.com/ravindran-dev" target="_blank"><span class="label">GitHub</span></a> | <a href="https://www.linkedin.com/in/ravindran-s-982702327" target="_blank"><span class="label">LinkedIn</span></a>| <a href="mailto:ravindrans.dev@gmail.com" target="_blank"><span class="label">Email</span></a> |`,
+    
     html: true,
-    animate: false
+    animate: true
   }
 ];
 
@@ -122,12 +146,23 @@ async function printOutput(text, animate, pre, html = false) {
     return;
   }
 
-  if (animate && !pre) {
-    const words = text.trim().split(/\s+/);
-    for (const w of words) {
-      el.innerText += w + " ";
-      await sleep(120);
-      terminal.scrollTop = terminal.scrollHeight;
+  if (animate) {
+    if (pre) {
+      // Animate line by line for pre-formatted text
+      const lines = text.trim().split('\n');
+      for (const line of lines) {
+        el.innerText += line + '\n';
+        await sleep(80);
+        terminal.scrollTop = terminal.scrollHeight;
+      }
+    } else {
+      // Animate word by word for regular text
+      const words = text.trim().split(/\s+/);
+      for (const w of words) {
+        el.innerText += w + " ";
+        await sleep(120);
+        terminal.scrollTop = terminal.scrollHeight;
+      }
     }
   } else {
     el.innerText = text.trim();
