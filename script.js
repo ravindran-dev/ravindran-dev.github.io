@@ -94,8 +94,8 @@ projects/
   },
   {
     cmd: "./contact.sh",
-    out: `| <a href="https://drive.google.com/file/d/1Rqxarjk0PSaIYBJ1Z-3mvlVPjFMRTUbn/view?usp=sharing" target="_blank"><span class="label">Resume</span></a> | <a href="https://github.com/ravindran-dev" target="_blank"><span class="label">GitHub</span></a> | <a href="https://www.linkedin.com/in/ravindran-s-982702327" target="_blank"><span class="label">LinkedIn</span></a>| <a href="mailto:ravindrans.dev@gmail.com" target="_blank"><span class="label">Email</span></a> |`,
-    
+    out: `| <a href="https://drive.google.com/file/d/180ijolULD0g4WwWYbS8kCGgDWPUT_WOY/view?usp=sharing" target="_blank"><span class="label">Resume</span></a> | <a href="https://github.com/ravindran-dev" target="_blank"><span class="label">GitHub</span></a> | <a href="https://www.linkedin.com/in/ravindran-s-982702327" target="_blank"><span class="label">LinkedIn</span></a>| <a href="mailto:ravindrans.dev@gmail.com" target="_blank"><span class="label">Email</span></a> |`,
+
     html: true,
     animate: true
   }
