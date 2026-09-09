@@ -88,28 +88,28 @@ export default function HomePage() {
         </div>
 
         {/* Right Hero Column: Professional Photo */}
-        <div className="lg:col-span-5 flex flex-col items-center">
-          <div className="relative w-full max-w-sm">
-            <div className="overflow-hidden rounded-2xl border border-border bg-surface-muted shadow-lg shadow-slate-200/50 dark:shadow-black/50 aspect-square relative">
+        <div className="lg:col-span-5 flex flex-col items-center justify-end mt-8 lg:mt-0">
+          <div className="relative w-full max-w-md lg:max-w-lg">
+            <div className="relative w-full flex items-center justify-center">
               <Image
                 src="/photo.png"
                 alt={PERSONAL_INFO.name}
-                width={500}
-                height={500}
+                width={600}
+                height={600}
                 priority
-                className="object-cover w-full h-full"
+                className="object-contain w-full h-auto drop-shadow-2xl scale-110 sm:scale-125 lg:scale-110 origin-bottom"
               />
             </div>
             
             {/* Overlay Info Pill */}
-            <div className="absolute -bottom-4 left-4 right-4 p-3 rounded-xl border border-border bg-white/95 dark:bg-zinc-900/95 backdrop-blur-md shadow-md flex items-center justify-between text-xs">
+            <div className="absolute -bottom-8 left-4 right-4 sm:left-12 sm:right-12 p-3 rounded-xl border border-border bg-white/95 dark:bg-zinc-900/95 backdrop-blur-md shadow-xl flex flex-col sm:flex-row items-center justify-between text-xs gap-2 z-10">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-blue-600" />
-                <span className="font-medium text-foreground">
+                <span className="font-medium text-foreground text-center sm:text-left">
                   Chennai Institute of Technology
                 </span>
               </div>
-              <span className="font-mono text-primary font-semibold">
+              <span className="font-mono text-primary font-bold bg-blue-50 dark:bg-blue-900/40 px-2 py-0.5 rounded">
                 9.24 CGPA
               </span>
             </div>

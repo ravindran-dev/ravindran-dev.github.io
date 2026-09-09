@@ -22,9 +22,9 @@ export const metadata = {
 
 const CATEGORY_ICONS: Record<string, any> = {
   Languages: Code2,
-  "Machine Learning & Edge AI": Cpu,
+  "ML / AI": Cpu,
   "Systems & Infrastructure": Server,
-  "Web & Full-Stack Systems": Globe,
+  "Web & Full-Stack": Globe,
   "Core Competencies": Binary,
 };
 

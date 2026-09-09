@@ -78,16 +78,14 @@ export default function AboutPage() {
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
         {/* Photo Column */}
         <div className="md:col-span-4 space-y-4">
-          <div className="rounded-2xl border border-border bg-surface-muted p-2 overflow-hidden shadow-sm">
-            <div className="aspect-square relative rounded-xl overflow-hidden">
-              <Image
-                src="/photo.png"
-                alt={PERSONAL_INFO.name}
-                width={400}
-                height={400}
-                className="object-cover w-full h-full"
-              />
-            </div>
+          <div className="relative w-full aspect-square flex items-center justify-center mb-4">
+            <Image
+              src="/photo.png"
+              alt={PERSONAL_INFO.name}
+              width={400}
+              height={400}
+              className="object-contain w-full h-full drop-shadow-xl"
+            />
           </div>
 
           <Card className="p-4 space-y-3 bg-surface-muted/50 border-border/70 text-xs">

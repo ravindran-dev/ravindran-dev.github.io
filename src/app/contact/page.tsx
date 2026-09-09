@@ -194,7 +194,7 @@ export default function ContactPage() {
               >
                 <div className="flex items-center gap-2.5">
                   <Linkedin className="w-4 h-4 text-blue-600" />
-                  <span>linkedin.com/in/ravindran-s</span>
+                  <span>linkedin.com/in/ravindran-s-982702327</span>
                 </div>
                 <ExternalLink className="w-3.5 h-3.5 text-muted group-hover:text-foreground" />
               </a>
