@@ -94,8 +94,9 @@ export default function HomePage() {
               <Image
                 src="/photo.png"
                 alt={PERSONAL_INFO.name}
-                width={600}
-                height={600}
+                width={1000}
+                height={1000}
+                quality={100}
                 priority
                 className="object-contain w-full h-auto drop-shadow-2xl scale-110 sm:scale-125 lg:scale-110 origin-bottom"
               />

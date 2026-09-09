@@ -82,8 +82,9 @@ export default function AboutPage() {
             <Image
               src="/photo.png"
               alt={PERSONAL_INFO.name}
-              width={400}
-              height={400}
+              width={1000}
+              height={1000}
+              quality={100}
               className="object-contain w-full h-full drop-shadow-xl"
             />
           </div>
