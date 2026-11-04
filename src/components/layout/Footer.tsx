@@ -6,7 +6,7 @@ import { Github, Linkedin, Mail, ArrowUpRight, Terminal } from "lucide-react";
 export function Footer() {
   return (
     <footer className="mt-20 border-t border-border bg-surface-muted/50 dark:bg-zinc-950 py-12 text-muted text-sm">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-8">
+      <div className="w-full max-w-7xl 2xl:max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12 space-y-8">
         {/* Terminal Portfolio Promo Banner in Footer */}
         <div className="p-4 sm:p-5 rounded-xl border border-emerald-500/30 bg-emerald-500/5 dark:bg-emerald-950/20 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3 text-center sm:text-left">

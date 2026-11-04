@@ -24,7 +24,7 @@ export const metadata = {
 
 export default function ExperiencePage() {
   return (
-    <PageWrapper className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16 space-y-12">
+    <PageWrapper className="w-full max-w-7xl 2xl:max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12 py-12 sm:py-16 space-y-12">
       {/* Header */}
       <SectionHeader
         badge="Career & Contributions"
@@ -115,13 +115,13 @@ export default function ExperiencePage() {
       <div className="flex items-center justify-between pt-6 border-t border-border">
         <Link
           href="/about"
-          className="text-sm font-medium text-muted hover:text-foreground transition-colors"
+          className="inline-flex items-center gap-1.5 text-sm font-medium text-muted hover:text-foreground transition-colors px-3 py-2 rounded-lg hover:bg-surface-muted"
         >
-          ← About &amp; Education
+          <span>← About &amp; Education</span>
         </Link>
         <Link
           href="/projects"
-          className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:text-primary-hover transition-colors"
+          className="inline-flex items-center gap-1.5 text-sm font-medium text-white bg-primary hover:bg-primary-hover px-4 py-2 rounded-lg shadow-xs transition-colors"
         >
           <span>View Featured Projects</span>
           <ArrowRight className="w-4 h-4" />

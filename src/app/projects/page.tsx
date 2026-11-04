@@ -1,5 +1,8 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 import { PROJECTS, PERSONAL_INFO } from "@/data/portfolioData";
 import { PageWrapper } from "@/components/ui/PageWrapper";
 import { SectionHeader } from "@/components/ui/SectionHeader";
@@ -14,130 +17,206 @@ import {
   ArrowRight,
   Sparkles,
   CheckCircle2,
+  Activity,
+  Zap,
 } from "lucide-react";
+import { cn } from "@/lib/utils";
 
-export const metadata = {
-  title: "Projects | Ravindran S",
-  description: "High-performance systems engineering, Edge AI inference models, and distributed pipelines built by Ravindran S.",
+const CATEGORY_ICONS: Record<string, React.ElementType> = {
+  "Edge AI & ML": Cpu,
+  "Systems & Security": Shield,
+  "IoT & Full-Stack": Layers,
 };
 
 export default function ProjectsPage() {
+  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+
+  const categories = ["All", "Edge AI & ML", "Systems & Security", "IoT & Full-Stack"];
+
+  const filteredProjects =
+    selectedCategory === "All"
+      ? PROJECTS
+      : PROJECTS.filter((p) => p.category === selectedCategory);
+
   return (
-    <PageWrapper className="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-16 space-y-12">
+    <PageWrapper className="w-full max-w-7xl 2xl:max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12 py-12 sm:py-16 space-y-12">
       {/* Header */}
       <SectionHeader
         badge="Engineering Portfolio"
         title="Featured Projects"
-        description="Deep dives into sub-1 GFLOP computer vision models, kernel-level eBPF package security in Rust, and real-time distributed IoT telemetry."
+        description="Deep dives into sub-1 GFLOP computer vision models for drones, kernel-level eBPF package security in Rust, and real-time distributed IoT telemetry."
       />
 
+      {/* Category Filter Pills */}
+      <div className="flex items-center justify-start gap-1.5 sm:gap-2 overflow-x-auto pb-2 scrollbar-none">
+        {categories.map((cat) => {
+          const isSelected = selectedCategory === cat;
+          const count =
+            cat === "All"
+              ? PROJECTS.length
+              : PROJECTS.filter((p) => p.category === cat).length;
+
+          return (
+            <button
+              key={cat}
+              type="button"
+              onClick={() => setSelectedCategory(cat)}
+              className={cn(
+                "px-4 py-2 rounded-full text-xs font-medium transition-all shrink-0 select-none flex items-center gap-1.5",
+                isSelected
+                  ? "bg-primary text-white shadow-xs font-semibold"
+                  : "bg-surface-muted border border-border/80 text-muted hover:text-foreground hover:bg-surface"
+              )}
+            >
+              <span>{cat}</span>
+              <span
+                className={cn(
+                  "text-[10px] px-1.5 py-0.2 rounded-full font-mono",
+                  isSelected
+                    ? "bg-white/20 text-white"
+                    : "bg-surface border border-border/60 text-muted"
+                )}
+              >
+                {count}
+              </span>
+            </button>
+          );
+        })}
+      </div>
+
       {/* Projects List */}
-      <div className="space-y-10">
-        {PROJECTS.map((project) => (
-          <Card key={project.id} className="p-6 sm:p-8 space-y-6">
-            {/* Top Bar */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-border/60">
-              <div>
-                <div className="flex items-center gap-2 mb-1.5">
-                  <Badge variant="primary">{project.category}</Badge>
-                  {project.featured && (
-                    <span className="text-[11px] font-mono text-emerald-600 dark:text-emerald-400 font-semibold">
-                      Featured
-                    </span>
-                  )}
-                </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-foreground font-heading">
-                  {project.title}
-                </h3>
-                <p className="text-sm text-primary font-medium mt-0.5">
-                  {project.subtitle}
-                </p>
-              </div>
+      <div className="space-y-8">
+        <AnimatePresence mode="popLayout">
+          {filteredProjects.map((project) => {
+            const Icon = CATEGORY_ICONS[project.category] || Cpu;
 
-              {/* Action Buttons */}
-              <div className="flex items-center gap-2.5 shrink-0">
-                {project.githubUrl && (
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg border border-border bg-surface hover:bg-surface-muted text-xs font-mono font-medium transition-colors"
-                  >
-                    <Github className="w-4 h-4" />
-                    <span>Source Code</span>
-                  </a>
-                )}
-                {project.liveUrl && (
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-primary hover:bg-primary-hover text-white text-xs font-mono font-semibold transition-colors"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                    <span>Live Demo</span>
-                  </a>
-                )}
-              </div>
-            </div>
+            return (
+              <motion.div
+                key={project.id}
+                layout
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.25 }}
+              >
+                <Card className="p-6 sm:p-8 space-y-6 border-border/80 hover:border-border transition-all">
+                  {/* Top Bar with Title, Category, and Action Buttons */}
+                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-border/60">
+                    <div className="space-y-1.5">
+                      <div className="flex items-center gap-2.5">
+                        <span className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold px-2.5 py-0.5 rounded-full bg-blue-500/10 text-blue-700 dark:text-blue-300 border border-blue-500/20">
+                          <Icon className="w-3.5 h-3.5" />
+                          <span>{project.category}</span>
+                        </span>
+                        {project.featured && (
+                          <span className="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-600 dark:text-emerald-400 font-semibold px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20">
+                            <Zap className="w-3 h-3" />
+                            <span>Featured Project</span>
+                          </span>
+                        )}
+                      </div>
 
-            {/* Performance Metrics Banner */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 p-3.5 rounded-xl bg-surface-muted border border-border/70">
-              {project.metrics.map((metric, mIdx) => (
-                <div key={mIdx} className="space-y-0.5 text-center sm:text-left">
-                  <span className="text-[10px] font-mono uppercase text-muted tracking-wider">
-                    Metric {mIdx + 1}
-                  </span>
-                  <p className="text-xs sm:text-sm font-mono font-bold text-foreground">
-                    {metric}
-                  </p>
-                </div>
-              ))}
-            </div>
+                      <h3 className="text-2xl sm:text-3xl font-bold text-foreground font-heading tracking-tight">
+                        {project.title}
+                      </h3>
+                      <p className="text-sm sm:text-base text-primary font-medium">
+                        {project.subtitle}
+                      </p>
+                    </div>
 
-            {/* Detailed Description */}
-            <div className="space-y-3 text-xs sm:text-sm text-muted leading-relaxed">
-              <h4 className="text-xs font-mono font-semibold text-foreground uppercase tracking-wide">
-                Architectural Breakdown
-              </h4>
-              {project.description.map((point, pIdx) => (
-                <div key={pIdx} className="flex items-start gap-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                  <span>{point}</span>
-                </div>
-              ))}
-            </div>
+                    {/* Action Buttons with Proper Alignment */}
+                    <div className="flex items-center gap-2.5 shrink-0 self-start md:self-center">
+                      {project.githubUrl && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-border bg-surface hover:bg-surface-muted text-xs font-mono font-medium transition-colors shadow-2xs"
+                        >
+                          <Github className="w-4 h-4 text-muted" />
+                          <span>View Repository</span>
+                        </a>
+                      )}
+                      {project.liveUrl && (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary hover:bg-primary-hover text-white text-xs font-mono font-semibold shadow-xs transition-colors"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                          <span>Live Demo</span>
+                        </a>
+                      )}
+                    </div>
+                  </div>
 
-            {/* Technologies */}
-            <div className="pt-4 border-t border-border/60 flex flex-wrap items-center gap-1.5">
-              <span className="text-xs font-mono text-muted mr-2">Built With:</span>
-              {project.technologies.map((tech) => (
-                <Badge key={tech} size="sm">
-                  {tech}
-                </Badge>
-              ))}
-            </div>
-          </Card>
-        ))}
+                  {/* Performance Metrics Glass Strip */}
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 p-4 rounded-xl bg-surface-muted/60 border border-border/80">
+                    {project.metrics.map((metric, mIdx) => (
+                      <div key={mIdx} className="space-y-1 text-center md:text-left">
+                        <span className="text-[10px] font-mono uppercase text-muted tracking-wider block">
+                          Verified Metric {mIdx + 1}
+                        </span>
+                        <p className="text-xs sm:text-sm font-mono font-bold text-foreground">
+                          {metric}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Architectural Breakdown (Resume v5 Accurate) */}
+                  <div className="space-y-3.5">
+                    <h4 className="text-xs font-mono font-semibold text-foreground uppercase tracking-wide flex items-center gap-2">
+                      <Sparkles className="w-3.5 h-3.5 text-primary" />
+                      <span>Technical Architecture &amp; Implementation Details</span>
+                    </h4>
+                    <div className="space-y-2.5 text-xs sm:text-sm text-muted leading-relaxed">
+                      {project.description.map((point, pIdx) => (
+                        <div key={pIdx} className="flex items-start gap-3">
+                          <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                          <span>{point}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Technology Tags */}
+                  <div className="pt-4 border-t border-border/60 flex flex-wrap items-center gap-2">
+                    <span className="text-xs font-mono text-muted mr-1.5">Stack:</span>
+                    {project.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2.5 py-1 rounded-md text-xs font-mono bg-surface-muted border border-border/70 text-foreground/90 font-medium"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </Card>
+              </motion.div>
+            );
+          })}
+        </AnimatePresence>
       </div>
 
       {/* GitHub Repository CTA */}
-      <div className="p-6 rounded-xl border border-border bg-surface-muted/60 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="p-6 sm:p-7 rounded-xl border border-border bg-surface-muted/60 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="space-y-1 text-center sm:text-left">
           <h4 className="text-sm font-bold text-foreground font-heading">
-            Looking for more repositories and experimental code?
+            Looking for more repositories and systems code?
           </h4>
           <p className="text-xs text-muted">
-            Check out open-source toolkits, algorithms, and systems experiments on GitHub.
+            Explore autonomous vision pipelines, Rust utilities, and algorithmic contest solutions on GitHub.
           </p>
         </div>
         <a
           href={PERSONAL_INFO.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-surface border border-border hover:bg-surface-muted text-xs font-mono font-medium transition-colors shrink-0"
+          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-surface border border-border hover:bg-surface-muted text-xs font-mono font-medium transition-colors shrink-0 shadow-2xs"
         >
-          <Github className="w-4 h-4" />
+          <Github className="w-4 h-4 text-foreground" />
           <span>github.com/ravindran-dev</span>
         </a>
       </div>
@@ -146,15 +225,15 @@ export default function ProjectsPage() {
       <div className="flex items-center justify-between pt-6 border-t border-border">
         <Link
           href="/experience"
-          className="text-sm font-medium text-muted hover:text-foreground transition-colors"
+          className="inline-flex items-center gap-1.5 text-sm font-medium text-muted hover:text-foreground transition-colors px-3 py-2 rounded-lg hover:bg-surface-muted"
         >
-          ← Professional Experience
+          <span>← Professional Experience</span>
         </Link>
         <Link
           href="/skills"
-          className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:text-primary-hover transition-colors"
+          className="inline-flex items-center gap-1.5 text-sm font-medium text-white bg-primary hover:bg-primary-hover px-4 py-2 rounded-lg shadow-xs transition-colors"
         >
-          <span>View Technical Toolkit</span>
+          <span>View Technical Skills</span>
           <ArrowRight className="w-4 h-4" />
         </Link>
       </div>

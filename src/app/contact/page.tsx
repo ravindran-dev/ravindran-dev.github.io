@@ -8,6 +8,8 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Card } from "@/components/ui/Card";
 import {
   Mail,
+  Phone,
+  ArrowUpRight,
   MapPin,
   Linkedin,
   Github,
@@ -82,7 +84,7 @@ export default function ContactPage() {
   };
 
   return (
-    <PageWrapper className="max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-16 space-y-12">
+    <PageWrapper className="max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 xl:px-12 py-10 sm:py-16 space-y-12">
       {/* Header */}
       <SectionHeader
         badge="Direct Inquiry"
@@ -135,6 +137,36 @@ export default function ContactPage() {
                 )}
               </button>
             </Card>
+
+            {/* Phone Card */}
+            {PERSONAL_INFO.phone && (
+              <Card className="p-4 flex items-center justify-between gap-3">
+                <div className="flex items-center gap-3 min-w-0">
+                  <div className="w-9 h-9 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
+                    <Phone className="w-4 h-4" />
+                  </div>
+                  <div className="min-w-0">
+                    <span className="text-[11px] font-mono text-muted uppercase block">
+                      Phone Number
+                    </span>
+                    <a
+                      href={`tel:${PERSONAL_INFO.phone.replace(/\s+/g, "")}`}
+                      className="text-xs sm:text-sm font-mono font-medium text-foreground hover:text-primary transition-colors truncate block"
+                    >
+                      {PERSONAL_INFO.phone}
+                    </a>
+                  </div>
+                </div>
+                <a
+                  href={`tel:${PERSONAL_INFO.phone.replace(/\s+/g, "")}`}
+                  className="p-2 rounded-lg border border-border hover:bg-surface-muted text-muted hover:text-foreground transition-colors shrink-0"
+                  aria-label="Call Direct"
+                  title="Direct Call"
+                >
+                  <ArrowUpRight className="w-4 h-4" />
+                </a>
+              </Card>
+            )}
 
             {/* Location Card */}
             <Card className="p-4 flex items-center gap-3">
@@ -354,13 +386,13 @@ export default function ContactPage() {
       <div className="flex items-center justify-between pt-6 border-t border-border">
         <Link
           href="/achievements"
-          className="text-xs sm:text-sm font-medium text-muted hover:text-foreground transition-colors"
+          className="inline-flex items-center gap-1.5 text-sm font-medium text-muted hover:text-foreground transition-colors px-3 py-2 rounded-lg hover:bg-surface-muted"
         >
-          ← Achievements &amp; Accolades
+          <span>← Achievements &amp; Accolades</span>
         </Link>
         <Link
           href="/"
-          className="inline-flex items-center gap-1 text-xs sm:text-sm font-medium text-primary hover:text-primary-hover transition-colors"
+          className="inline-flex items-center gap-1.5 text-sm font-medium text-white bg-primary hover:bg-primary-hover px-4 py-2 rounded-lg shadow-xs transition-colors"
         >
           <span>Return to Home</span>
           <ArrowRight className="w-4 h-4" />

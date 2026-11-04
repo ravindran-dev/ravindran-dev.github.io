@@ -28,9 +28,9 @@ import {
 
 export default function HomePage() {
   return (
-    <PageWrapper className="max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-16 space-y-20">
+    <PageWrapper className="max-w-7xl 2xl:max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12 py-10 sm:py-16 space-y-20">
       {/* Hero Section */}
-      <section className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+      <section className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
         {/* Left Hero Column */}
         <div className="lg:col-span-7 space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-200 bg-blue-50/80 text-blue-700 dark:border-blue-900/60 dark:bg-blue-950/40 dark:text-blue-300 text-xs font-mono">
@@ -76,7 +76,7 @@ export default function HomePage() {
           {/* Quick tech stack icons row */}
           <div className="pt-4 border-t border-border/60 flex flex-wrap items-center gap-2">
             <span className="text-xs text-muted font-mono mr-2">Core Tech:</span>
-            {["C++", "Rust", "Go", "Python", "TensorRT", "PyTorch", "eBPF", "Linux", "React"].map((tech) => (
+            {["C", "C++", "Rust", "Python", "TensorRT", "PyTorch", "eBPF", "Linux", "React"].map((tech) => (
               <span
                 key={tech}
                 className="px-2 py-0.5 rounded text-xs font-mono bg-surface-muted border border-border/70 text-foreground/80"

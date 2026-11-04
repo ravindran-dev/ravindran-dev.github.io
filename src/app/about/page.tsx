@@ -42,13 +42,13 @@ const HIGHLIGHTS = [
     icon: Shield,
     title: "Systems & Security",
     description:
-      "Built Archon AUR package manager in Rust with eBPF syscall monitors and Bubblewrap sandboxing to detect malicious package scripts with <5% overhead.",
+      "Built Archon package manager in Rust with Aya/eBPF syscall monitors and Bubblewrap sandboxing, validated by 171 tests catching 3 malicious attacks at <5% overhead.",
   },
   {
     icon: Layers,
     title: "Distributed Systems & IoT",
     description:
-      "Architected end-to-end IoT pipelines (MQTT, Firebase, React, TFLite) maintaining <200ms end-to-end alert latencies.",
+      "Architected end-to-end event-driven IoT pipelines (MQTT, Flask, Firebase, React, TFLite) handling 1000+ msgs/sec at <50 ms latency.",
   },
   {
     icon: Terminal,
@@ -66,7 +66,7 @@ const HIGHLIGHTS = [
 
 export default function AboutPage() {
   return (
-    <PageWrapper className="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-16 space-y-16">
+    <PageWrapper className="max-w-7xl 2xl:max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12 py-12 sm:py-16 space-y-16">
       {/* Header */}
       <SectionHeader
         badge="Background"
@@ -75,9 +75,9 @@ export default function AboutPage() {
       />
 
       {/* Main Bio & Image Section */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-14 items-start">
         {/* Photo Column */}
-        <div className="md:col-span-4 space-y-4">
+        <div className="lg:col-span-4 space-y-5">
           <div className="relative w-full aspect-square flex items-center justify-center mb-4">
             <Image
               src="/photo.png"
@@ -121,7 +121,7 @@ export default function AboutPage() {
         </div>
 
         {/* Narrative Column */}
-        <div className="md:col-span-8 space-y-6 text-sm sm:text-base text-muted leading-relaxed">
+        <div className="lg:col-span-8 space-y-6 text-sm sm:text-base text-muted leading-relaxed">
           <div className="space-y-4">
             <h3 className="text-xl sm:text-2xl font-bold text-foreground font-heading">
               Engineering high-performance software from the metal to the cloud.
@@ -235,13 +235,13 @@ export default function AboutPage() {
       <div className="flex items-center justify-between pt-6 border-t border-border">
         <Link
           href="/"
-          className="text-sm font-medium text-muted hover:text-foreground transition-colors"
+          className="inline-flex items-center gap-1.5 text-sm font-medium text-muted hover:text-foreground transition-colors px-3 py-2 rounded-lg hover:bg-surface-muted"
         >
-          ← Back to Home
+          <span>← Back to Home</span>
         </Link>
         <Link
           href="/experience"
-          className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:text-primary-hover transition-colors"
+          className="inline-flex items-center gap-1.5 text-sm font-medium text-white bg-primary hover:bg-primary-hover px-4 py-2 rounded-lg shadow-xs transition-colors"
         >
           <span>View Professional Experience</span>
           <ArrowRight className="w-4 h-4" />
