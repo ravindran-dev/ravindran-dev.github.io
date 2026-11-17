@@ -27,6 +27,7 @@
 - **`/about` (About)**: Background, academic details (Chennai Institute of Technology, CGPA 9.24/10), and core competencies (AOSP, Edge AI, Distributed Systems, eBPF, GPU Optimization).
 - **`/experience` (Experience)**: Chronological timeline of engineering roles (Drone Technology Team @ CIT NIDAR, AI/ML Internship @ AICTE, AWS s2n-tls core contributor).
 - **`/projects` (Projects)**: Deep technical breakdowns of MicroDet (sub-1 GFLOP drone vision), Archon (eBPF & Rust AUR sandbox), and Machine Guard (IoT predictive maintenance).
+- **`/products` (Products)**: Product directory with dedicated static release and documentation pages for Hertix, Quantum IDE, Arch Linux Developer Pack, Archon, Zenmode, and Airlink.
 - **`/skills` (Skills)**: Categorized toolkit across Languages, ML & Edge AI, Systems & Infrastructure, and Web Platforms.
 - **`/achievements` (Achievements)**: Horizontally animated infinite marquee ticker showcasing competitive programming ratings (LeetCode Knight 2085, CodeChef 1716, ICPC 2025), Hackathon wins (Ti Forge Rs. 50k, AI for Sustainability), and Cisco certifications.
 - **`/contact` (Contact)**: Direct contact channels and interactive inquiry form.
@@ -44,6 +45,12 @@ npm run dev
 
 # Build production static export
 npm run build
+```
+
+Lint the application with the Next.js Core Web Vitals rules:
+
+```bash
+npm run lint
 ```
 
 ---

@@ -1,0 +1,414 @@
+{
+  "arch-linux-dev-pack": {
+    "syncedAt": "2026-11-17T16:55:57.956Z",
+    "releases": [],
+    "tags": [
+      "ravindran-dev/nvim:v0.1.0"
+    ]
+  },
+  "archon": {
+    "syncedAt": "2026-11-17T16:55:58.971Z",
+    "releases": [
+      {
+        "version": "0.1.1",
+        "tag": "v0.1.1",
+        "date": "2026-07-13",
+        "summary": "First public release. archon started as an Arch-only, security-monitored\r\nAUR package manager and grew into a cross-distro CLI while keeping that\r\ncore intact.\r\n\r\n## Highlights\r\n\r\n- **Cross-distro support** — `archon install/remove/search` now works on\r\n  Arch, Debian/Ubuntu, Fedora/RHEL, openSUSE, Alpine, NixOS, Void, and\r\n  Gentoo. Off Arch, archon detects the host via `/etc/os-release` and\r\n  delegates to the native package manager (`apt`, `dnf`, `zypper`, `apk`,\r\n  `nix-env`, `xbps`, `emerge`) — same commands everywhere, no need to\r\n  remember which flags belong to which tool. NixOS installs correctly run\r\n  **without** sudo, since `nix-env` installs into the user's own profile.\r\n- **Ranked search** — `archon search <term>` is ordered by AUR popularity\r\n  (a proxy for what people actually install) instead of alphabetically, so\r\n  `archon search chrome` surfaces `google-chrome` first instead of burying\r\n  it under 70 zero-vote packages. Exact matches always pin to the top.\r\n- **Published on crates.io** — `cargo install archon-cli` gets you a\r\n  binary named `archon`, eBPF monitor included (no separate nightly build\r\n  step required).\r\n\r\n## Core (Arch)\r\n\r\n- Dependency resolution across official repos *and* the AUR in a single\r\n  graph — `provides=()` virtual packages, version constraints, conflict\r\n  detection, correct AUR build ordering.\r\n- AUR packages build inside a bubblewrap sandbox: two-stage `makepkg`,\r\n  network allowed only while fetching sources, fully unshared during the\r\n  actual build.\r\n- `--report` monitors the build with eBPF — every exec, file write, and\r\n  network connection is checked against a policy, and archon only offers\r\n  to install if the report is clean.\r\n- \"Did you mean\" suggestions when an exact package name isn't found.\r\n\r\n## Quality\r\n\r\n- 171 unit/integration tests, zero clippy warnings.\r\n- Every non-obvious design decision — three real concurrency/mount-order\r\n  bugs found only through live testing — is written up in\r\n  [docs/DESIGN.md](https://github.com/ravindran-dev/archon/blob/main/docs/DESIGN.md).\r\n\r\n## Known limitations\r\n\r\n- The sandbox and eBPF monitor are Arch-only — other distros get\r\n  resolution + install via their native tool, not sandboxed/monitored\r\n  builds. `--report` says so explicitly rather than silently no-op'ing.\r\n- Cross-distro backends are argv-construction only; off Arch, the native\r\n  tool owns dependency resolution and its own confirmation prompt.\r\n\r\n## Install\r\n\r\n```zsh\r\ncargo install archon-cli\r\n```\r\n\r\nSee the [README](https://github.com/ravindran-dev/archon#readme) for full\r\nusage, supported distros, and prerequisites.\r\n",
+        "url": "https://github.com/ravindran-dev/archon/releases/tag/v0.1.1",
+        "status": "stable",
+        "source": "ravindran-dev/archon",
+        "assets": []
+      }
+    ],
+    "tags": [
+      "ravindran-dev/archon:v0.1.1"
+    ]
+  },
+  "hertix": {
+    "syncedAt": "2026-11-17T16:55:56.908Z",
+    "releases": [
+      {
+        "version": "1.0.23",
+        "tag": "v1.0.23",
+        "date": "2026-11-11",
+        "summary": "Hertix 1.0.23\n\n- Search exact-video, regional catalog and transliterated title sources together, keeping responsive results and prioritizing synchronized lyrics.\n- Add additional regional timed lyric catalogs and timed video-caption fallback when a catalog has no match.\n- Refresh the music client version from its service page so exact-video lyric requests remain compatible as that service changes.\n- Cancel an old track’s lyric lookup cleanly when playback changes, so results cannot overwrite the current lyric state.\n- Keep each playlist track linked to its exact video so source-based lyrics lookup works for individual songs.\n- Search lyrics catalogs with native-script and Latin transliterations for Tamil and other Indian languages.\n- Prefer time-synchronized lyrics when available and avoid false line highlighting for plain lyrics.\n- Replace saved plain lyrics with synchronized lyrics when a better match is found.\n- Prevent a crash when older saved tracks are opened or rescanned after adding optional lyric source metadata.\n- Keep older library records and backups compatible with the new lyric source field.\n\nHertix 1.0.22\n\n- Regional lyrics search now tries original-script and Tanglish queries and checks several closely matched YouTube Music sources.\n- Download playlists directly from YouTube search results.\n- Playlist retries skip completed tracks and retry failed tracks only. Older jobs recover completed tracks from saved files.\n- Show the Hertix symbol when song artwork is unavailable.\n- Make contextual popups and update notices more translucent so the page behind them remains visible.\n",
+        "url": "https://github.com/ravindran-dev/Hertix/releases/tag/v1.0.23",
+        "status": "stable",
+        "source": "ravindran-dev/Hertix",
+        "assets": [
+          {
+            "name": "app-release.apk",
+            "url": "https://github.com/ravindran-dev/Hertix/releases/download/v1.0.23/app-release.apk",
+            "size": 124958283,
+            "contentType": "application/vnd.android.package-archive",
+            "digest": "sha256:f0097f28c6b6bc2750dcef25591ca6a52b8d655f8ae10ba2b4aa752241870345"
+          }
+        ]
+      },
+      {
+        "version": "1.0.22",
+        "tag": "v1.0.22",
+        "date": "2026-11-08",
+        "summary": "Hertix 1.0.22\n\n- Regional lyrics search now tries original-script and Tanglish queries and checks several closely matched YouTube Music sources.\n- Download playlists directly from YouTube search results.\n- Playlist retries skip completed tracks and retry failed tracks only. Older jobs recover completed tracks from saved files.\n- Show the Hertix symbol when song artwork is unavailable.\n- Make contextual popups and update notices more translucent so the page behind them remains visible.\n",
+        "url": "https://github.com/ravindran-dev/Hertix/releases/tag/v1.0.22",
+        "status": "stable",
+        "source": "ravindran-dev/Hertix",
+        "assets": [
+          {
+            "name": "app-release.apk",
+            "url": "https://github.com/ravindran-dev/Hertix/releases/download/v1.0.22/app-release.apk",
+            "size": 124948447,
+            "contentType": "application/vnd.android.package-archive",
+            "digest": "sha256:cc9e92eb56bb24cf580dcb5a960bef208e3e3010bcac8e829ab1a6ec7328b296"
+          }
+        ]
+      },
+      {
+        "version": "1.0.21",
+        "tag": "v1.0.21",
+        "date": "2026-11-08",
+        "summary": "Hertix 1.0.21\n\n- Route app updates through the stable release asset endpoint.\n- Retry temporary download errors and resume an interrupted APK transfer.\n",
+        "url": "https://github.com/ravindran-dev/Hertix/releases/tag/v1.0.21",
+        "status": "stable",
+        "source": "ravindran-dev/Hertix",
+        "assets": [
+          {
+            "name": "app-release.apk",
+            "url": "https://github.com/ravindran-dev/Hertix/releases/download/v1.0.21/app-release.apk",
+            "size": 124944147,
+            "contentType": "application/vnd.android.package-archive",
+            "digest": "sha256:683fdd35af6ba2796521a2759de44ec331a88408c37ede1b17b0f940a69db467"
+          }
+        ]
+      },
+      {
+        "version": "1.0.20",
+        "tag": "v1.0.20",
+        "date": "2026-11-08",
+        "summary": "Hertix 1.0.20\n\n- Confirmation dialogs and cloud file selection now share the translucent glass popup styling used by contextual menus.\n- Popup surfaces remain translucent on older Android releases, and the update prompt shows more of the blurred screen behind it.\n",
+        "url": "https://github.com/ravindran-dev/Hertix/releases/tag/v1.0.20",
+        "status": "stable",
+        "source": "ravindran-dev/Hertix",
+        "assets": [
+          {
+            "name": "app-release.apk",
+            "url": "https://github.com/ravindran-dev/Hertix/releases/download/v1.0.20/app-release.apk",
+            "size": 124942703,
+            "contentType": "application/vnd.android.package-archive",
+            "digest": "sha256:15d2ed379e6075c7197436dec63c4938a1af607729f6ea668612fd07232dd352"
+          }
+        ]
+      },
+      {
+        "version": "1.0.19",
+        "tag": "v1.0.19",
+        "date": "2026-11-08",
+        "summary": "**Full Changelog**: https://github.com/ravindran-dev/Hertix/compare/v1.0.18...v1.0.19",
+        "url": "https://github.com/ravindran-dev/Hertix/releases/tag/v1.0.19",
+        "status": "stable",
+        "source": "ravindran-dev/Hertix",
+        "assets": [
+          {
+            "name": "app-release.apk",
+            "url": "https://github.com/ravindran-dev/Hertix/releases/download/v1.0.19/app-release.apk",
+            "size": 124942203,
+            "contentType": "application/vnd.android.package-archive",
+            "digest": "sha256:39aa0c7a050b4335a4b3ceaa401c3baf9bb0dde1a1e2cc47fb583b877e8ad351"
+          }
+        ]
+      },
+      {
+        "version": "1.0.18",
+        "tag": "v1.0.18",
+        "date": "2026-11-08",
+        "summary": "### Hertix 1.0.18\n\n- Tamil YouTube Music lyrics now detect localized lyrics tabs and show Tanglish by default, with a Tamil-script toggle.\n- YouTube audio downloads use concurrent fragments, HTTP chunking, resume support, and stronger transient-failure retries.\n- The update dialog uses a compact frosted layout with scrollable notes and stacked actions.\n- Player options share the home menu's frosted backdrop. The home logo is larger and the account/menu spacing is balanced.\n\nInstall from the in-app update prompt. Account and cloud-sync data remain intact.\n",
+        "url": "https://github.com/ravindran-dev/Hertix/releases/tag/v1.0.18",
+        "status": "stable",
+        "source": "ravindran-dev/Hertix",
+        "assets": [
+          {
+            "name": "app-release.apk",
+            "url": "https://github.com/ravindran-dev/Hertix/releases/download/v1.0.18/app-release.apk",
+            "size": 124939403,
+            "contentType": "application/vnd.android.package-archive",
+            "digest": "sha256:0e3026e1ae5ea740b7faa6f233bdda4cc310b20321c2b242ac2a9c16ff9b0b47"
+          }
+        ]
+      },
+      {
+        "version": "1.0.17",
+        "tag": "v1.0.17",
+        "date": "2026-11-08",
+        "summary": "### Hertix 1.0.17\n\n- Lyrics now check the playing video's YouTube Music lyrics tab, including Tamil and other regional-language results.\n- Exact-video YouTube captions are used as a last-resort lyrics source after lyrics catalogs.\n- Updated the Hertix launcher and home-page branding with the newly supplied purple H play symbol and wordmark.\n\nInstall from the in-app update prompt. Account and cloud-sync data remain intact.\n",
+        "url": "https://github.com/ravindran-dev/Hertix/releases/tag/v1.0.17",
+        "status": "stable",
+        "source": "ravindran-dev/Hertix",
+        "assets": [
+          {
+            "name": "app-release.apk",
+            "url": "https://github.com/ravindran-dev/Hertix/releases/download/v1.0.17/app-release.apk",
+            "size": 124934279,
+            "contentType": "application/vnd.android.package-archive",
+            "digest": "sha256:e96ca97270ed5f2988fcdf59005bdabd9b913e728070725d6f1aa103da00dd5d"
+          }
+        ]
+      },
+      {
+        "version": "1.0.16",
+        "tag": "v1.0.16",
+        "date": "2026-11-08",
+        "summary": "### Hertix 1.0.16\n\n- YouTube Music search now uses the WEB_REMIX/Innertube path, avoiding the YouTube Data API daily search quota.\n- Search is tuned to the device locale for regional results.\n- Lyrics lookup accepts rich synchronized responses and adds KuGou's timestamped LRC catalog as a regional-language fallback.\n- The update popup is a compact frosted dialog with readable release notes and stacked actions.\n\nInstall from the in-app update prompt. Existing account and cloud-sync data are preserved.\n",
+        "url": "https://github.com/ravindran-dev/Hertix/releases/tag/v1.0.16",
+        "status": "stable",
+        "source": "ravindran-dev/Hertix",
+        "assets": [
+          {
+            "name": "app-release.apk",
+            "url": "https://github.com/ravindran-dev/Hertix/releases/download/v1.0.16/app-release.apk",
+            "size": 125371083,
+            "contentType": "application/vnd.android.package-archive",
+            "digest": "sha256:a5ff6671049f905f6b01786e4d8ea24bbf0423662baa04a4ef24c115efb70f48"
+          }
+        ]
+      },
+      {
+        "version": "1.0.15",
+        "tag": "v1.0.15",
+        "date": "2026-11-08",
+        "summary": "**Full Changelog**: https://github.com/ravindran-dev/Hertix/compare/v1.0.14...v1.0.15",
+        "url": "https://github.com/ravindran-dev/Hertix/releases/tag/v1.0.15",
+        "status": "stable",
+        "source": "ravindran-dev/Hertix",
+        "assets": [
+          {
+            "name": "app-release.apk",
+            "url": "https://github.com/ravindran-dev/Hertix/releases/download/v1.0.15/app-release.apk",
+            "size": 125371011,
+            "contentType": "application/vnd.android.package-archive",
+            "digest": "sha256:d159df618716f0aeacd6b0f57af7a8bbbf86f900d144c6e40fec7489c45f2827"
+          }
+        ]
+      },
+      {
+        "version": "1.0.14",
+        "tag": "v1.0.14",
+        "date": "2026-11-08",
+        "summary": "Lyrics lookup now tries the source YouTube video ID, supporting regional-language matches even when file metadata lists a publisher instead of the artist. Exact-title matching is more tolerant of missing or different video durations while still rejecting ambiguous matches. The updater popup now uses a tighter frosted-glass layout with a stronger blurred backdrop. Download tabs show only their names; totals remain in the summary.",
+        "url": "https://github.com/ravindran-dev/Hertix/releases/tag/v1.0.14",
+        "status": "stable",
+        "source": "ravindran-dev/Hertix",
+        "assets": [
+          {
+            "name": "app-release.apk",
+            "url": "https://github.com/ravindran-dev/Hertix/releases/download/v1.0.14/app-release.apk",
+            "size": 125364471,
+            "contentType": "application/vnd.android.package-archive",
+            "digest": "sha256:bc89ce4f104f1bb2b4bdc42705ab823930194e0520b14c8446619a7cd015e757"
+          }
+        ]
+      },
+      {
+        "version": "1.0.13",
+        "tag": "v1.0.13",
+        "date": "2026-11-08",
+        "summary": "Downloads now show live Active, Completed, and Failed counts and switch to the outcome tab when a job finishes. Song and playlist download details have clearer progress, error, playlist contents, and local file actions. Lyrics matching handles YouTube lyric-video titles and publisher channels more reliably. The player track actions popup has a refreshed translucent layout with grouped controls.",
+        "url": "https://github.com/ravindran-dev/Hertix/releases/tag/v1.0.13",
+        "status": "stable",
+        "source": "ravindran-dev/Hertix",
+        "assets": [
+          {
+            "name": "app-release.apk",
+            "url": "https://github.com/ravindran-dev/Hertix/releases/download/v1.0.13/app-release.apk",
+            "size": 125363279,
+            "contentType": "application/vnd.android.package-archive",
+            "digest": "sha256:595c2d98828fb5af42a163e0e342ee73372ff318ed144475754de36d92b0d7bd"
+          }
+        ]
+      },
+      {
+        "version": "1.0.12",
+        "tag": "v1.0.12",
+        "date": "2026-11-08",
+        "summary": "Downloads: Active, Completed, and Failed tabs now show live counts and move to the completed or failed state when a download finishes. Download detail pages distinguish songs from playlists and show progress, playlist contents, errors, and local-file actions. Deleting a local download keeps its history entry. Lyrics lookup now ignores publisher names and YouTube lyric-video labels when matching tracks. The update popup has a shorter layout when release notes are unavailable.",
+        "url": "https://github.com/ravindran-dev/Hertix/releases/tag/v1.0.12",
+        "status": "stable",
+        "source": "ravindran-dev/Hertix",
+        "assets": [
+          {
+            "name": "app-release.apk",
+            "url": "https://github.com/ravindran-dev/Hertix/releases/download/v1.0.12/app-release.apk",
+            "size": 125361799,
+            "contentType": "application/vnd.android.package-archive",
+            "digest": "sha256:f0db6a9f7a61785c92c528006c58ed9c11231ef5bfebabb08b9cac362d07d828"
+          }
+        ]
+      },
+      {
+        "version": "1.0.11",
+        "tag": "v1.0.11",
+        "date": "2026-11-08",
+        "summary": "**Full Changelog**: https://github.com/ravindran-dev/Hertix/compare/v1.0.10...v1.0.11",
+        "url": "https://github.com/ravindran-dev/Hertix/releases/tag/v1.0.11",
+        "status": "stable",
+        "source": "ravindran-dev/Hertix",
+        "assets": [
+          {
+            "name": "app-release.apk",
+            "url": "https://github.com/ravindran-dev/Hertix/releases/download/v1.0.11/app-release.apk",
+            "size": 125345399,
+            "contentType": "application/vnd.android.package-archive",
+            "digest": "sha256:fee310b0018fd445180073ee6a0a43da34e4007a5acb3a745ba0314bce9cce7b"
+          }
+        ]
+      },
+      {
+        "version": "1.0.10",
+        "tag": "v1.0.10",
+        "date": "2026-11-08",
+        "summary": "**Full Changelog**: https://github.com/ravindran-dev/Hertix/compare/v1.0.9...v1.0.10",
+        "url": "https://github.com/ravindran-dev/Hertix/releases/tag/v1.0.10",
+        "status": "stable",
+        "source": "ravindran-dev/Hertix",
+        "assets": [
+          {
+            "name": "Hertix-v1.0.10.apk",
+            "url": "https://github.com/ravindran-dev/Hertix/releases/download/v1.0.10/Hertix-v1.0.10.apk",
+            "size": 125341811,
+            "contentType": "application/vnd.android.package-archive",
+            "digest": "sha256:b52cddb02bcafb49fec91640401315a857cb3486711cb4745814b708d5c5814b"
+          }
+        ]
+      },
+      {
+        "version": "1.0.9",
+        "tag": "v1.0.9",
+        "date": "2026-11-08",
+        "summary": "**Full Changelog**: https://github.com/ravindran-dev/YTHub/compare/v1.0.8...v1.0.9",
+        "url": "https://github.com/ravindran-dev/Hertix/releases/tag/v1.0.9",
+        "status": "stable",
+        "source": "ravindran-dev/Hertix",
+        "assets": [
+          {
+            "name": "Hertix-v1.0.9.apk",
+            "url": "https://github.com/ravindran-dev/Hertix/releases/download/v1.0.9/Hertix-v1.0.9.apk",
+            "size": 125337991,
+            "contentType": "application/vnd.android.package-archive",
+            "digest": "sha256:1a427005ab3d0c3fbaa84321691e41ae9fcc7a069307727f189d7bb313d4b70b"
+          }
+        ]
+      },
+      {
+        "version": "1.0.8",
+        "tag": "v1.0.8",
+        "date": "2026-11-08",
+        "summary": "**Full Changelog**: https://github.com/ravindran-dev/YTHub/compare/v1.0.7...v1.0.8",
+        "url": "https://github.com/ravindran-dev/Hertix/releases/tag/v1.0.8",
+        "status": "stable",
+        "source": "ravindran-dev/Hertix",
+        "assets": [
+          {
+            "name": "Hertix-v1.0.8.apk",
+            "url": "https://github.com/ravindran-dev/Hertix/releases/download/v1.0.8/Hertix-v1.0.8.apk",
+            "size": 125329319,
+            "contentType": "application/vnd.android.package-archive",
+            "digest": "sha256:b74f0b2d6b2430b59186c464d7f7474c4b7f22e56b3a4a5b5ab2c730371a3ca3"
+          }
+        ]
+      },
+      {
+        "version": "1.0.7",
+        "tag": "v1.0.7",
+        "date": "2026-11-08",
+        "summary": "**Full Changelog**: https://github.com/ravindran-dev/YTHub/compare/v1.0.6...v1.0.7",
+        "url": "https://github.com/ravindran-dev/Hertix/releases/tag/v1.0.7",
+        "status": "stable",
+        "source": "ravindran-dev/Hertix",
+        "assets": [
+          {
+            "name": "Hertix-v1.0.7.apk",
+            "url": "https://github.com/ravindran-dev/Hertix/releases/download/v1.0.7/Hertix-v1.0.7.apk",
+            "size": 125329291,
+            "contentType": "application/vnd.android.package-archive",
+            "digest": "sha256:930d63ca86a2af45b37d1e63dccbe54af58dbf33d38353690f97d416a5d4ec41"
+          }
+        ]
+      },
+      {
+        "version": "1.0.6",
+        "tag": "v1.0.6",
+        "date": "2026-11-08",
+        "summary": "**Full Changelog**: https://github.com/ravindran-dev/YTHub/compare/v1.0.5...v1.0.6",
+        "url": "https://github.com/ravindran-dev/Hertix/releases/tag/v1.0.6",
+        "status": "stable",
+        "source": "ravindran-dev/Hertix",
+        "assets": [
+          {
+            "name": "app-release.apk",
+            "url": "https://github.com/ravindran-dev/Hertix/releases/download/v1.0.6/app-release.apk",
+            "size": 124014179,
+            "contentType": "application/vnd.android.package-archive",
+            "digest": "sha256:5f70c54d96c8103e75596e28a7d82ed93bbfbb7c0f9ae51237432fed45198d3b"
+          }
+        ]
+      },
+      {
+        "version": "1.0.5",
+        "tag": "v1.0.5",
+        "date": "2026-11-08",
+        "summary": "**Full Changelog**: https://github.com/ravindran-dev/YTHub/compare/v1.0.4...v1.0.5",
+        "url": "https://github.com/ravindran-dev/Hertix/releases/tag/v1.0.5",
+        "status": "stable",
+        "source": "ravindran-dev/Hertix",
+        "assets": [
+          {
+            "name": "app-release.apk",
+            "url": "https://github.com/ravindran-dev/Hertix/releases/download/v1.0.5/app-release.apk",
+            "size": 124008803,
+            "contentType": "application/vnd.android.package-archive",
+            "digest": "sha256:5afc4e0796a9605ca60116ba619b95ded76b37a6c08430a82515f85d68bc6a88"
+          }
+        ]
+      },
+      {
+        "version": "1.0.4",
+        "tag": "v1.0.4",
+        "date": "2026-11-08",
+        "summary": "**Full Changelog**: https://github.com/ravindran-dev/YTHub/compare/v1.0.3...v1.0.4",
+        "url": "https://github.com/ravindran-dev/Hertix/releases/tag/v1.0.4",
+        "status": "stable",
+        "source": "ravindran-dev/Hertix",
+        "assets": [
+          {
+            "name": "app-release.apk",
+            "url": "https://github.com/ravindran-dev/Hertix/releases/download/v1.0.4/app-release.apk",
+            "size": 124002519,
+            "contentType": "application/vnd.android.package-archive",
+            "digest": "sha256:9e3e73e80e369441e9e5b6321d57d5bdb93d3379dcd0b38e375daee04128ea69"
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "ravindran-dev/Hertix:v1.0.23",
+      "ravindran-dev/Hertix:v1.0.22",
+      "ravindran-dev/Hertix:v1.0.21",
+      "ravindran-dev/Hertix:v1.0.20",
+      "ravindran-dev/Hertix:v1.0.19",
+      "ravindran-dev/Hertix:v1.0.18",
+      "ravindran-dev/Hertix:v1.0.17",
+      "ravindran-dev/Hertix:v1.0.16",
+      "ravindran-dev/Hertix:v1.0.15",
+      "ravindran-dev/Hertix:v1.0.14",
+      "ravindran-dev/Hertix:v1.0.13",
+      "ravindran-dev/Hertix:v1.0.12",
+      "ravindran-dev/Hertix:v1.0.11",
+      "ravindran-dev/Hertix:v1.0.10",
+      "ravindran-dev/Hertix:v1.0.9",
+      "ravindran-dev/Hertix:v1.0.8",
+      "ravindran-dev/Hertix:v1.0.7",
+      "ravindran-dev/Hertix:v1.0.6",
+      "ravindran-dev/Hertix:v1.0.5",
+      "ravindran-dev/Hertix:v1.0.4"
+    ]
+  }
+}

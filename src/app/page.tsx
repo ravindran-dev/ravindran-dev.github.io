@@ -25,6 +25,8 @@ import {
   CheckCircle2,
   Sparkles,
 } from "lucide-react";
+import { ProductCard } from "@/components/products/ProductCard";
+import { getPublishedProducts } from "@/data/productRegistry";
 
 export default function HomePage() {
   return (
@@ -207,6 +209,20 @@ export default function HomePage() {
               </div>
             </Card>
           ))}
+        </div>
+      </section>
+
+      {/* Official Products */}
+      <section className="space-y-6" id="products">
+        <SectionHeader
+          badge="Software by Ravindran"
+          title="Products"
+          description="Independent product pages for the apps, developer tools, and Linux environments I build and maintain."
+          linkText="Explore all products"
+          linkHref="/products"
+        />
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+          {getPublishedProducts().map((product) => <ProductCard key={product.slug} product={product} />)}
         </div>
       </section>
 

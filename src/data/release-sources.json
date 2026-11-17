@@ -1,0 +1,8 @@
+[
+  { "slug": "hertix", "sources": ["https://github.com/ravindran-dev/Hertix"] },
+  { "slug": "quantum-ide", "sources": ["https://github.com/ravindran-dev/quantum"] },
+  { "slug": "arch-linux-dev-pack", "sources": ["https://github.com/ravindran-dev/dotfiles", "https://github.com/ravindran-dev/nvim", "https://github.com/ravindran-dev/swayfx"] },
+  { "slug": "archon", "sources": ["https://github.com/ravindran-dev/archon"] },
+  { "slug": "zenmode", "sources": ["https://github.com/ravindran-dev/ZenMode"] },
+  { "slug": "airlink", "sources": ["https://github.com/ravindran-dev/Airlink"] }
+]
