@@ -57,10 +57,10 @@ export function Navbar() {
         {/* Brand Logo with Initial S in Anton: RAVINDRAN S. */}
         <Link
           href="/"
-          className="group flex items-center font-display text-2xl sm:text-3xl lg:text-4xl uppercase tracking-tight text-foreground transition-transform hover:scale-[1.02] shrink-0"
+          className="group flex items-center font-display text-xl sm:text-3xl lg:text-4xl uppercase tracking-tight text-foreground transition-transform hover:scale-[1.02] shrink-0"
         >
-          <span>RAVINDRAN S</span><span className="text-[#ffe17c] text-3xl sm:text-4xl leading-none">.</span>
-          <span className="inline-flex items-center justify-center h-6 px-2.5 rounded-full border border-[#171e19]/20 dark:border-[#ffe17c]/40 bg-[#ffe17c]/10 text-[11px] font-mono font-bold text-[#171e19] dark:text-[#ffe17c] uppercase tracking-wider ml-1.5 shadow-2xs">
+          <span>RAVINDRAN S</span><span className="text-[#ffe17c] text-2xl sm:text-4xl leading-none">.</span>
+          <span className="inline-flex items-center justify-center h-5 sm:h-6 px-2 sm:px-2.5 rounded-full border border-[#171e19]/20 dark:border-[#ffe17c]/40 bg-[#ffe17c]/10 text-[10px] sm:text-[11px] font-mono font-bold text-[#171e19] dark:text-[#ffe17c] uppercase tracking-wider ml-1 sm:ml-1.5 shadow-2xs">
             SDE
           </span>
         </Link>
@@ -153,7 +153,7 @@ export function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             title="GitHub Profile"
-            className="w-10 h-10 rounded-xl border border-[#171e19]/15 dark:border-[#b7c6c2]/20 bg-white dark:bg-[#202a24] hover:border-[#ffe17c] hover:bg-[#ffe17c]/10 text-foreground hover:text-[#171e19] dark:hover:text-[#ffe17c] flex items-center justify-center transition-colors shadow-2xs"
+            className="hidden md:inline-flex w-10 h-10 rounded-xl border border-[#171e19]/15 dark:border-[#b7c6c2]/20 bg-white dark:bg-[#202a24] hover:border-[#ffe17c] hover:bg-[#ffe17c]/10 text-foreground hover:text-[#171e19] dark:hover:text-[#ffe17c] items-center justify-center transition-colors shadow-2xs"
             aria-label="GitHub Profile"
           >
             <Github size={18} />
@@ -167,7 +167,7 @@ export function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             title="Download Resume (PDF)"
-            className="w-10 h-10 rounded-xl border border-[#171e19]/15 dark:border-[#b7c6c2]/20 bg-white dark:bg-[#202a24] hover:border-[#ffe17c] hover:bg-[#ffe17c]/10 text-foreground hover:text-[#171e19] dark:hover:text-[#ffe17c] flex items-center justify-center transition-colors shadow-2xs"
+            className="hidden sm:inline-flex w-10 h-10 rounded-xl border border-[#171e19]/15 dark:border-[#b7c6c2]/20 bg-white dark:bg-[#202a24] hover:border-[#ffe17c] hover:bg-[#ffe17c]/10 text-foreground hover:text-[#171e19] dark:hover:text-[#ffe17c] items-center justify-center transition-colors shadow-2xs"
             aria-label="Resume PDF"
           >
             <FileText size={18} />

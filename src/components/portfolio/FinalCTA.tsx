@@ -23,7 +23,7 @@ export function FinalCTA() {
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.6 }}
-      className="relative overflow-hidden rounded-3xl sm:rounded-[2.5rem] bg-[#ffe17c] text-[#171e19] p-8 sm:p-12 lg:p-16 my-16 shadow-2xl"
+      className="relative overflow-hidden rounded-3xl sm:rounded-[2.5rem] bg-[#ffe17c] text-[#171e19] p-6 sm:p-12 lg:p-16 my-10 sm:my-16 shadow-2xl"
     >
       {/* Background Decorative Element: Massive 'Anton' text overlay with 10% opacity */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden opacity-10">
@@ -33,17 +33,17 @@ export function FinalCTA() {
       </div>
 
       {/* Centralized Stack */}
-      <div className="relative z-10 max-w-3xl mx-auto text-center space-y-5">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#171e19] text-white text-xs font-mono uppercase tracking-widest font-bold mx-auto">
+      <div className="relative z-10 max-w-3xl mx-auto text-center space-y-4 sm:space-y-5">
+        <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1.5 rounded-full bg-[#171e19] text-white text-[10px] sm:text-xs font-mono uppercase tracking-wider sm:tracking-widest font-bold mx-auto">
           <span className="w-2 h-2 rounded-full bg-[#ffe17c] animate-pulse" />
           <span>OPEN FOR SDE &amp; SYSTEMS OPPORTUNITIES</span>
         </div>
 
-        <h2 className="font-display text-5xl sm:text-7xl lg:text-8xl uppercase leading-[0.9] text-[#171e19]">
+        <h2 className="font-display text-3xl sm:text-6xl lg:text-8xl uppercase leading-[0.95] sm:leading-[0.9] text-[#171e19] break-words">
           LET&apos;S BUILD SOMETHING RELENTLESS.
         </h2>
 
-        <p className="font-sans font-medium text-base sm:text-xl text-[#171e19]/85 max-w-xl mx-auto leading-relaxed">
+        <p className="font-sans font-medium text-sm sm:text-xl text-[#171e19]/85 max-w-xl mx-auto leading-relaxed">
           Ready to deploy low-level systems, edge AI inference pipelines, and mission-critical software.
         </p>
 

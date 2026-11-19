@@ -214,7 +214,7 @@ export function ProductShowcase() {
       </div>
 
       {/* INTERACTIVE PRODUCT STAGE */}
-      <div className="relative overflow-hidden rounded-3xl border border-border/80 bg-gradient-to-b from-card via-card to-surface-muted p-6 sm:p-8 lg:p-10 shadow-xl transition-all">
+      <div className="relative overflow-hidden rounded-3xl border border-border/80 bg-gradient-to-b from-card via-card to-surface-muted p-4 sm:p-8 lg:p-10 shadow-xl transition-all">
         {/* Glow ambient circle */}
         <div
           className="absolute -top-32 -right-32 h-96 w-96 rounded-full blur-3xl opacity-25 pointer-events-none transition-all duration-700"

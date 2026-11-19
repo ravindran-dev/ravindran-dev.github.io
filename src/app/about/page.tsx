@@ -76,17 +76,17 @@ const METRICS = [
 
 export default function AboutPage() {
   return (
-    <PageWrapper className="max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-12 sm:py-20 space-y-20">
+    <PageWrapper className="max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-8 sm:py-20 space-y-12 sm:space-y-20">
       {/* 1. HERO SECTION: Centered Portrait Photo & Editorial Headline */}
-      <section className="text-center space-y-8">
+      <section className="text-center space-y-6 sm:space-y-8">
         {/* Availability Badge */}
-        <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-[#171e19]/15 dark:border-[#b7c6c2]/20 bg-[#f8f9fa] dark:bg-[#202a24] text-xs font-mono font-bold tracking-widest uppercase text-foreground shadow-2xs">
+        <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full border border-[#171e19]/15 dark:border-[#b7c6c2]/20 bg-[#f8f9fa] dark:bg-[#202a24] text-[10px] sm:text-xs font-mono font-bold tracking-wider sm:tracking-widest uppercase text-foreground shadow-2xs">
           <span className="w-2 h-2 rounded-full bg-[#ffe17c] animate-pulse" />
           <span>AVAILABLE FOR SDE &amp; SYSTEMS ROLES</span>
         </div>
 
         {/* Centered Image Frame */}
-        <div className="relative mx-auto w-64 h-72 sm:w-80 sm:h-96 rounded-3xl border-2 border-[#171e19]/15 dark:border-[#b7c6c2]/25 bg-white dark:bg-[#202a24] shadow-2xl overflow-hidden p-2 group transition-transform duration-300 hover:scale-[1.02]">
+        <div className="relative mx-auto w-56 h-64 sm:w-80 sm:h-96 rounded-3xl border-2 border-[#171e19]/15 dark:border-[#b7c6c2]/25 bg-white dark:bg-[#202a24] shadow-2xl overflow-hidden p-2 group transition-transform duration-300 hover:scale-[1.02]">
           {/* Subtle Glow Behind Photo */}
           <div className="absolute inset-0 bg-gradient-to-b from-[#ffe17c]/20 via-transparent to-[#171e19]/30 opacity-70 pointer-events-none" />
 
@@ -98,7 +98,7 @@ export default function AboutPage() {
               priority
               quality={95}
               className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
-              sizes="(max-width: 640px) 256px, 320px"
+              sizes="(max-width: 640px) 224px, 320px"
             />
           </div>
 
@@ -111,7 +111,7 @@ export default function AboutPage() {
 
         {/* Centered Headline in Anton Display Typography */}
         <div className="space-y-3 max-w-4xl mx-auto">
-          <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl uppercase tracking-tight text-foreground leading-[0.9]">
+          <h1 className="font-display text-4xl sm:text-7xl lg:text-8xl uppercase tracking-tight text-foreground leading-[0.9]">
             RAVINDRAN S<span className="text-[#ffe17c]">.</span>
           </h1>
           <p className="font-mono text-xs sm:text-sm uppercase tracking-widest text-[#171e19]/70 dark:text-[#ffe17c] font-bold">
@@ -130,19 +130,19 @@ export default function AboutPage() {
         </div>
 
         {/* Action Buttons: Centered Stack */}
-        <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
+        <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-2.5 sm:gap-3 w-full sm:w-auto max-w-xs sm:max-w-none mx-auto">
           <a
             href={PERSONAL_INFO.resumeUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#ffe17c] hover:bg-[#f5d45d] text-[#171e19] font-display text-base uppercase tracking-wider shadow-sm transition-transform hover:scale-105"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#ffe17c] hover:bg-[#f5d45d] text-[#171e19] font-display text-base uppercase tracking-wider shadow-sm transition-transform hover:scale-105"
           >
             <span>DOWNLOAD CV (PDF)</span>
             <ArrowUpRight size={16} />
           </a>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-[#171e19]/20 dark:border-[#b7c6c2]/25 bg-white dark:bg-[#202a24] text-foreground hover:bg-[#171e19]/5 dark:hover:bg-[#171e19] font-sans font-bold text-xs uppercase tracking-wider transition-colors shadow-2xs"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-[#171e19]/20 dark:border-[#b7c6c2]/25 bg-white dark:bg-[#202a24] text-foreground hover:bg-[#171e19]/5 dark:hover:bg-[#171e19] font-sans font-bold text-xs uppercase tracking-wider transition-colors shadow-2xs"
           >
             <Mail size={15} />
             <span>GET IN TOUCH</span>
@@ -151,7 +151,7 @@ export default function AboutPage() {
             href={PERSONAL_INFO.terminalPortfolioUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-[#171e19]/20 dark:border-[#ffe17c]/30 bg-surface-muted hover:bg-black/5 dark:bg-white/5 dark:hover:bg-white/10 text-foreground dark:text-[#ffe17c] font-mono text-xs font-bold transition-colors shadow-2xs"
+            className="hidden sm:inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-[#171e19]/20 dark:border-[#ffe17c]/30 bg-surface-muted hover:bg-black/5 dark:bg-white/5 dark:hover:bg-white/10 text-foreground dark:text-[#ffe17c] font-mono text-xs font-bold transition-colors shadow-2xs"
           >
             <Terminal size={14} className="text-[#ffe17c]" />
             <span>CLI EDITION</span>
@@ -160,7 +160,7 @@ export default function AboutPage() {
       </section>
 
       {/* 2. KEY METRICS STRIP: High-Contrast 4-Column Bento */}
-      <section className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <section className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4">
         {METRICS.map((metric, idx) => (
           <div
             key={idx}

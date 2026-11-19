@@ -48,7 +48,7 @@ export default function ExperiencePage() {
             </div>
 
             {/* Experience Card */}
-            <Card className="p-6 sm:p-7 space-y-5 hover:border-[#ffe17c]/40 transition-all">
+            <Card className="p-4 sm:p-7 space-y-4 sm:space-y-5 hover:border-[#ffe17c]/40 transition-all">
               {/* Header Details */}
               <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 pb-4 border-b border-border/60">
                 <div className="space-y-1">

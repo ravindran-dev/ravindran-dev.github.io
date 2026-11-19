@@ -37,10 +37,10 @@ export function EditorialHero() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.1, duration: 0.4 }}
-          className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-[#171e19]/15 dark:border-[#b7c6c2]/20 bg-white/80 dark:bg-[#171e19]/80 backdrop-blur-md shadow-xs mx-auto"
+          className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full border border-[#171e19]/15 dark:border-[#b7c6c2]/20 bg-white/80 dark:bg-[#171e19]/80 backdrop-blur-md shadow-xs mx-auto"
         >
           <span className="w-2 h-2 rounded-full bg-[#ffe17c] animate-pulse" />
-          <span className="text-[11px] font-mono font-bold tracking-widest uppercase text-foreground">
+          <span className="text-[10px] sm:text-[11px] font-mono font-bold tracking-wider sm:tracking-widest uppercase text-foreground">
             AVAILABLE FOR SDE &amp; SYSTEMS ROLES
           </span>
         </motion.div>
@@ -50,10 +50,10 @@ export function EditorialHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-          className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-[7.25rem] xl:text-[8.5rem] uppercase text-foreground leading-[0.9] tracking-tight"
+          className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-[7.25rem] xl:text-[8.5rem] uppercase text-foreground leading-[0.95] sm:leading-[0.9] tracking-tight break-words"
         >
           BUILDING HIGH-PERFORMANCE LOW-LEVEL{" "}
-          <span className="relative inline-block px-2.5 sm:px-3 mx-1">
+          <span className="relative inline-block px-2 sm:px-3 mx-0.5 sm:mx-1 mt-1 sm:mt-0">
             <span className="absolute inset-0 bg-[#ffe17c] -rotate-1 rounded-sm -z-10 shadow-xs" />
             <span className="text-[#171e19]">SYSTEMS.</span>
           </span>
@@ -64,7 +64,7 @@ export function EditorialHero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.5 }}
-          className="font-sans font-medium text-base sm:text-lg md:text-xl text-[#171e19]/70 dark:text-[#b7c6c2] max-w-xl mx-auto leading-relaxed pt-1"
+          className="font-sans font-medium text-sm sm:text-lg md:text-xl text-[#171e19]/70 dark:text-[#b7c6c2] max-w-xl mx-auto leading-relaxed pt-1"
         >
           {conciseSummary}
         </motion.p>
@@ -76,8 +76,8 @@ export function EditorialHero() {
           transition={{ delay: 0.4, duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
           className="pt-2 max-w-2xl mx-auto"
         >
-          <div className="flex flex-col sm:flex-row items-center gap-3 p-2 rounded-2xl border border-[#171e19]/20 dark:border-[#b7c6c2]/20 bg-white dark:bg-[#202a24] shadow-xl">
-            <div className="flex-1 w-full flex items-center gap-2.5 px-4 py-2.5 font-mono text-xs overflow-hidden">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 p-2 rounded-2xl border border-[#171e19]/20 dark:border-[#b7c6c2]/20 bg-white dark:bg-[#202a24] shadow-xl">
+            <div className="flex-1 w-full flex items-center gap-2.5 px-3 sm:px-4 py-2 sm:py-2.5 font-mono text-xs overflow-hidden">
               <Terminal size={15} className="text-[#171e19] dark:text-[#ffe17c] shrink-0" />
               <input
                 type="text"
@@ -100,16 +100,16 @@ export function EditorialHero() {
             <button
               type="button"
               onClick={handleCopy}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg bg-[#ffe17c] hover:bg-[#f5d45d] text-[#171e19] font-display text-xl uppercase tracking-wider shadow-lg transition-all duration-300 hover:scale-105 shrink-0"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 rounded-lg bg-[#ffe17c] hover:bg-[#f5d45d] text-[#171e19] font-display text-lg sm:text-xl uppercase tracking-wider shadow-lg transition-all duration-300 hover:scale-105 shrink-0"
             >
               <span>{copied ? "COPIED TO CLIPBOARD" : "INITIALIZE"}</span>
               <ArrowRight size={18} />
             </button>
           </div>
 
-          <div className="pt-3 flex items-center justify-center gap-4 text-xs font-mono">
+          <div className="pt-3 flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-xs font-mono">
             <span className="text-[#171e19]/80 dark:text-[#b7c6c2]">One-line install for local AI agent runtime</span>
-            <span className="text-[#171e19]/30 dark:text-white/30">·</span>
+            <span className="hidden sm:inline-block text-[#171e19]/30 dark:text-white/30">·</span>
             <a
               href={PERSONAL_INFO.resumeUrl}
               target="_blank"
@@ -126,17 +126,17 @@ export function EditorialHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.6 }}
-          className="pt-6 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto"
+          className="pt-6 grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-4 max-w-4xl mx-auto"
         >
           {PERSONAL_INFO.stats.map((stat, idx) => (
             <div
               key={idx}
-              className="p-4 sm:p-5 rounded-2xl border border-[#171e19]/10 dark:border-[#b7c6c2]/15 bg-white/70 dark:bg-[#202a24]/80 backdrop-blur-sm text-left shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-[#ffe17c]"
+              className="p-3.5 sm:p-5 rounded-2xl border border-[#171e19]/10 dark:border-[#b7c6c2]/15 bg-white/70 dark:bg-[#202a24]/80 backdrop-blur-sm text-left shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-[#ffe17c]"
             >
               <span className="text-[10px] font-mono uppercase tracking-widest text-muted block">
                 {stat.label}
               </span>
-              <span className="font-display text-2xl sm:text-3xl text-foreground block my-0.5">
+              <span className="font-display text-xl sm:text-3xl text-foreground block my-0.5">
                 {stat.value}
               </span>
               <p className="text-[11px] font-sans text-muted leading-tight">

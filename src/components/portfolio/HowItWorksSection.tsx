@@ -46,7 +46,7 @@ export function HowItWorksSection() {
               <span className="w-1.5 h-1.5 rounded-full bg-[#ffe17c] animate-pulse" />
               <span>EXECUTION FRAMEWORK</span>
             </div>
-            <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl uppercase leading-[0.9] text-foreground">
+            <h2 className="font-display text-3xl sm:text-5xl lg:text-7xl uppercase leading-[0.9] text-foreground">
               HOW I ENGINEER SYSTEMS.
             </h2>
             <p className="font-sans text-xs sm:text-sm text-[#171e19]/70 dark:text-[#b7c6c2] leading-relaxed max-w-sm pt-1">
@@ -74,9 +74,9 @@ export function HowItWorksSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ delay: idx * 0.15, duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
-              className="group relative rounded-3xl border border-[#171e19]/15 dark:border-[#b7c6c2]/15 bg-[#f8f9fa] dark:bg-[#1f2822] p-7 sm:p-9 shadow-lg transition-all duration-300 hover:shadow-2xl hover:border-[#ffe17c]/80 overflow-hidden"
+              className="group relative rounded-3xl border border-[#171e19]/15 dark:border-[#b7c6c2]/15 bg-[#f8f9fa] dark:bg-[#1f2822] p-5 sm:p-8 shadow-lg transition-all duration-300 hover:shadow-2xl hover:border-[#ffe17c]/80 overflow-hidden"
             >
-              <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-6">
+              <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 sm:gap-6">
                 <div className="space-y-2.5 max-w-xl">
                   <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#171e19] dark:text-[#ffe17c]">
                     {step.eyebrow}
@@ -101,9 +101,9 @@ export function HowItWorksSection() {
                   </div>
                 </div>
 
-                {/* Massive 8xl numeral: #ffe17c/20% that changes to full opacity on hover */}
-                <div className="shrink-0 select-none">
-                  <span className="font-display text-7xl sm:text-8xl leading-none text-[#ffe17c]/30 dark:text-[#ffe17c]/20 group-hover:text-[#ffe17c] transition-colors duration-300">
+                {/* Massive numeral: #ffe17c/20% that changes to full opacity on hover */}
+                <div className="shrink-0 select-none self-end sm:self-auto">
+                  <span className="font-display text-5xl sm:text-8xl leading-none text-[#ffe17c]/30 dark:text-[#ffe17c]/20 group-hover:text-[#ffe17c] transition-colors duration-300">
                     {step.num}
                   </span>
                 </div>

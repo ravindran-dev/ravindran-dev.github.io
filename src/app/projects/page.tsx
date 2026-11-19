@@ -105,7 +105,7 @@ export default function ProjectsPage() {
                 exit={{ opacity: 0, y: -12 }}
                 transition={{ duration: 0.25 }}
               >
-                <Card className="p-6 sm:p-8 space-y-6 border-border/80 hover:border-[#ffe17c]/50 transition-all">
+                <Card className="p-4 sm:p-8 space-y-5 sm:space-y-6 border-border/80 hover:border-[#ffe17c]/50 transition-all">
                   {/* Top Bar with Title, Category, and Action Buttons */}
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-border/60">
                     <div className="space-y-1.5">

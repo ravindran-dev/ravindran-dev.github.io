@@ -26,16 +26,16 @@ export function AbstractUIMockup() {
       className="w-full max-w-5xl mx-auto rounded-2xl border border-[#171e19]/15 dark:border-[#b7c6c2]/20 bg-white dark:bg-[#171e19] shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-[0_20px_50px_rgba(23,30,25,0.15)]"
     >
       {/* Browser Window Header */}
-      <div className="flex items-center justify-between px-4 py-3 border-b border-[#171e19]/10 dark:border-[#b7c6c2]/10 bg-[#f8f9fa] dark:bg-[#202a24]">
-        <div className="flex items-center gap-2">
-          <span className="w-3 h-3 rounded-full bg-[#ff5f56]" />
-          <span className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
-          <span className="w-3 h-3 rounded-full bg-[#27c93f]" />
+      <div className="flex items-center justify-between px-3 sm:px-4 py-2.5 sm:py-3 border-b border-[#171e19]/10 dark:border-[#b7c6c2]/10 bg-[#f8f9fa] dark:bg-[#202a24] gap-2">
+        <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+          <span className="w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full bg-[#ff5f56]" />
+          <span className="w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full bg-[#ffbd2e]" />
+          <span className="w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full bg-[#27c93f]" />
         </div>
-        <div className="font-mono text-xs text-muted dark:text-[#b7c6c2] tracking-wider uppercase">
+        <div className="font-mono text-[10px] sm:text-xs text-muted dark:text-[#b7c6c2] tracking-wider uppercase truncate px-1 text-center">
           ravindran-workstation :: localmind-runtime.sock (127.0.0.1:8420)
         </div>
-        <div className="flex items-center gap-1.5 text-xs font-mono text-[#ffe17c] bg-[#171e19] px-2 py-0.5 rounded">
+        <div className="flex items-center gap-1.5 text-[10px] sm:text-xs font-mono text-[#ffe17c] bg-[#171e19] px-2 py-0.5 rounded shrink-0">
           <span className="w-1.5 h-1.5 rounded-full bg-[#ffe17c] animate-pulse" />
           <span>RUNNING</span>
         </div>

@@ -61,13 +61,13 @@ export function BentoFeatureGrid() {
         {/* CARD 1: LocalMind (Spans 2 columns on lg) */}
         <motion.div
           variants={itemVariants}
-          className="lg:col-span-2 rounded-3xl border border-[#171e19]/10 dark:border-[#b7c6c2]/15 bg-white dark:bg-[#202a24] text-foreground p-7 sm:p-9 flex flex-col justify-between shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+          className="lg:col-span-2 rounded-3xl border border-[#171e19]/10 dark:border-[#b7c6c2]/15 bg-white dark:bg-[#202a24] text-foreground p-5 sm:p-8 flex flex-col justify-between shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
         >
           <div>
-            <div className="flex items-center justify-between pb-4 border-b border-[#171e19]/10 dark:border-white/10">
+            <div className="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-[#171e19]/10 dark:border-white/10">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-[#ffe17c] animate-pulse" />
-                <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#171e19] dark:text-[#ffe17c]">
+                <span className="text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-wider sm:tracking-widest text-[#171e19] dark:text-[#ffe17c]">
                   FLAGSHIP RUNTIME · v0.1.0
                 </span>
               </div>
@@ -75,7 +75,7 @@ export function BentoFeatureGrid() {
                 <a
                   href="/downloads/localmind-sdk-v0.1.0.tar.gz"
                   download
-                  className="inline-flex items-center gap-1 text-[11px] font-mono text-muted hover:text-foreground dark:hover:text-[#ffe17c] transition-colors"
+                  className="inline-flex items-center gap-1 text-[10px] sm:text-[11px] font-mono text-muted hover:text-foreground dark:hover:text-[#ffe17c] transition-colors"
                 >
                   <Download size={12} /> SDK .tar.gz (6.2 KB)
                 </a>
@@ -83,7 +83,7 @@ export function BentoFeatureGrid() {
             </div>
 
             <div className="mt-5 space-y-2">
-              <h3 className="font-display text-3xl sm:text-4xl uppercase text-foreground">
+              <h3 className="font-display text-2xl sm:text-4xl uppercase text-foreground">
                 LOCALMIND: PRIVATE AGENT RUNTIME
               </h3>
               <p className="font-sans text-xs sm:text-sm text-muted leading-relaxed max-w-xl">
@@ -128,7 +128,7 @@ export function BentoFeatureGrid() {
         {/* CARD 2: Keynix (Spans 1 column) */}
         <motion.div
           variants={itemVariants}
-          className="rounded-3xl border border-[#171e19]/10 dark:border-[#b7c6c2]/15 bg-white dark:bg-[#202a24] text-foreground p-7 sm:p-9 flex flex-col justify-between shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+          className="rounded-3xl border border-[#171e19]/10 dark:border-[#b7c6c2]/15 bg-white dark:bg-[#202a24] text-foreground p-5 sm:p-8 flex flex-col justify-between shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
         >
           <div>
             <div className="flex items-center justify-between pb-4 border-b border-[#171e19]/10 dark:border-white/10">
@@ -141,7 +141,7 @@ export function BentoFeatureGrid() {
             </div>
 
             <div className="mt-5 space-y-2">
-              <h3 className="font-display text-3xl uppercase text-foreground">
+              <h3 className="font-display text-2xl sm:text-3xl uppercase text-foreground">
                 KEYNIX: INPUT PLATFORM
               </h3>
               <p className="font-sans text-xs sm:text-sm text-muted leading-relaxed">
@@ -175,7 +175,7 @@ export function BentoFeatureGrid() {
         {/* CARD 3: Sub-1 GFLOP Drone AI (Spans 1 column) */}
         <motion.div
           variants={itemVariants}
-          className="rounded-3xl border border-[#171e19]/10 dark:border-[#b7c6c2]/15 bg-white dark:bg-[#202a24] text-foreground p-7 sm:p-9 flex flex-col justify-between shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+          className="rounded-3xl border border-[#171e19]/10 dark:border-[#b7c6c2]/15 bg-white dark:bg-[#202a24] text-foreground p-5 sm:p-8 flex flex-col justify-between shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
         >
           <div>
             <div className="flex items-center justify-between pb-4 border-b border-[#171e19]/10 dark:border-white/10">
@@ -188,7 +188,7 @@ export function BentoFeatureGrid() {
             </div>
 
             <div className="mt-5 space-y-2">
-              <h3 className="font-display text-3xl uppercase text-foreground">
+              <h3 className="font-display text-2xl sm:text-3xl uppercase text-foreground">
                 SUB-1 GFLOP DRONE AI
               </h3>
               <p className="font-sans text-xs sm:text-sm text-muted leading-relaxed">
@@ -215,13 +215,13 @@ export function BentoFeatureGrid() {
         {/* CARD 4: Hertix Music Platform (Spans 2 columns on lg) */}
         <motion.div
           variants={itemVariants}
-          className="lg:col-span-2 rounded-3xl border border-[#171e19]/10 dark:border-[#b7c6c2]/15 bg-white dark:bg-[#202a24] text-foreground p-7 sm:p-9 flex flex-col justify-between shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+          className="lg:col-span-2 rounded-3xl border border-[#171e19]/10 dark:border-[#b7c6c2]/15 bg-white dark:bg-[#202a24] text-foreground p-5 sm:p-8 flex flex-col justify-between shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
         >
           <div>
-            <div className="flex items-center justify-between pb-4 border-b border-[#171e19]/10 dark:border-white/10">
+            <div className="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-[#171e19]/10 dark:border-white/10">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-[#ffe17c] animate-pulse" />
-                <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-[#171e19] dark:text-[#ffe17c]">
+                <span className="text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-wider sm:tracking-widest text-[#171e19] dark:text-[#ffe17c]">
                   DESKTOP &amp; MOBILE · v1.0.23
                 </span>
               </div>
@@ -229,7 +229,7 @@ export function BentoFeatureGrid() {
             </div>
 
             <div className="mt-5 space-y-2">
-              <h3 className="font-display text-3xl sm:text-4xl uppercase text-foreground">
+              <h3 className="font-display text-2xl sm:text-4xl uppercase text-foreground">
                 HERTIX: LOCAL-FIRST MUSIC PLAYER
               </h3>
               <p className="font-sans text-xs sm:text-sm text-muted leading-relaxed max-w-xl">
@@ -238,7 +238,7 @@ export function BentoFeatureGrid() {
             </div>
           </div>
 
-          <div className="mt-6 pt-5 border-t border-[#171e19]/10 dark:border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div className="mt-6 pt-5 border-t border-[#171e19]/10 dark:border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3">
             <div className="p-3 rounded-xl border border-[#171e19]/10 dark:border-white/10 bg-[#f8f9fa] dark:bg-[#171e19]">
               <span className="text-[10px] font-mono text-muted block uppercase">Audio Engine</span>
               <span className="text-xs font-mono font-bold text-foreground dark:text-white">Media3 Service</span>

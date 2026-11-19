@@ -54,23 +54,23 @@ export function ProblemSolutionSection() {
     >
       <div className="grid grid-cols-1 lg:grid-cols-2">
         {/* Left Half: Problem ("THE OLD WAY") */}
-        <div className="bg-[#171e19] text-white p-8 sm:p-12 lg:p-14 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-white/10">
+        <div className="bg-[#171e19] text-white p-5 sm:p-10 lg:p-14 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-white/10">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-mono uppercase tracking-widest mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-[10px] sm:text-xs font-mono uppercase tracking-wider sm:tracking-widest mb-4 sm:mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-red-500" />
               <span>Inefficient Engineering</span>
             </div>
 
-            <h3 className="font-display text-5xl sm:text-6xl uppercase leading-[0.9] text-white">
+            <h3 className="font-display text-3xl sm:text-5xl lg:text-6xl uppercase leading-[0.9] text-white">
               THE OLD WAY
             </h3>
-            <p className="font-sans text-xs sm:text-sm text-[#b7c6c2] mt-3 mb-7 max-w-md leading-relaxed">
+            <p className="font-sans text-xs sm:text-sm text-[#b7c6c2] mt-3 mb-6 sm:mb-7 max-w-md leading-relaxed">
               Fragile architectures reliant on third-party cloud endpoints and heavy runtimes.
             </p>
 
-            <div className="space-y-5">
+            <div className="space-y-4 sm:space-y-5">
               {problems.map((item, idx) => (
-                <div key={idx} className="flex items-start gap-3.5">
+                <div key={idx} className="flex items-start gap-3 sm:gap-3.5">
                   <div className="w-6 h-6 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center shrink-0 mt-0.5">
                     <X size={14} className="text-red-400" />
                   </div>
@@ -87,25 +87,25 @@ export function ProblemSolutionSection() {
             </div>
           </div>
 
-          <div className="pt-8 mt-8 border-t border-white/10 text-[11px] font-mono text-[#b7c6c2]">
+          <div className="pt-6 sm:pt-8 mt-6 sm:mt-8 border-t border-white/10 text-[10px] sm:text-[11px] font-mono text-[#b7c6c2]">
             COMMON PITFALLS OF UNOPTIMIZED RUNTIMES
           </div>
         </div>
 
         {/* Right Half: Solution ("THE SYSTEMS WAY") */}
-        <div className="bg-[#272727] text-white p-8 sm:p-12 lg:p-14 flex flex-col justify-between border-2 border-[#ffe17c] relative">
+        <div className="bg-[#272727] text-white p-5 sm:p-10 lg:p-14 flex flex-col justify-between border-2 border-[#ffe17c] relative">
           <div className="absolute top-0 right-0 w-72 h-72 bg-[#ffe17c]/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="relative z-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ffe17c]/20 border border-[#ffe17c]/40 text-[#ffe17c] text-xs font-mono uppercase tracking-widest mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ffe17c]/20 border border-[#ffe17c]/40 text-[#ffe17c] text-[10px] sm:text-xs font-mono uppercase tracking-wider sm:tracking-widest mb-4 sm:mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-[#ffe17c] animate-pulse" />
               <span>Architected For Production</span>
             </div>
 
-            <h3 className="font-display text-5xl sm:text-6xl uppercase leading-[0.9] text-white">
+            <h3 className="font-display text-3xl sm:text-5xl lg:text-6xl uppercase leading-[0.9] text-white">
               THE SYSTEMS WAY
             </h3>
-            <p className="font-sans text-xs sm:text-sm text-zinc-300 mt-3 mb-7 max-w-md leading-relaxed">
+            <p className="font-sans text-xs sm:text-sm text-zinc-300 mt-3 mb-6 sm:mb-7 max-w-md leading-relaxed">
               Deterministic performance in C, Rust, and Linux kernel primitives.
             </p>
 
