@@ -1,4 +1,6 @@
 [
+  { "slug": "localmind", "sources": ["https://github.com/ravindran-dev/localmind"] },
+  { "slug": "keynix", "sources": ["https://github.com/ravindran-dev/keynix"] },
   { "slug": "hertix", "sources": ["https://github.com/ravindran-dev/Hertix"] },
   { "slug": "quantum-ide", "sources": ["https://github.com/ravindran-dev/quantum"] },
   { "slug": "arch-linux-dev-pack", "sources": ["https://github.com/ravindran-dev/dotfiles", "https://github.com/ravindran-dev/nvim", "https://github.com/ravindran-dev/swayfx"] },

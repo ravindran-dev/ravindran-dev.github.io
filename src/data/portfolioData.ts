@@ -57,7 +57,7 @@ export const PERSONAL_INFO = {
   terminalPortfolioUrl: "https://portfolio-ravindrans.vercel.app/",
   resumeUrl: "/resume.pdf",
   summary:
-    "Computer Science undergraduate (AI & ML) at Chennai Institute of Technology specializing in Edge AI inference, low-level systems programming, and high-performance software. Engineered sub-1 GFLOP real-time object detection models for autonomous drones achieving 96% mAP with TensorRT INT8 quantization, built security-hardened package managers in Rust with eBPF syscall sandboxing, and contributed patches to Amazon's AWS s2n-tls core security library. LeetCode Knight (2085 peak rating) and 3x Hackathon Winner.",
+    "CS @ Chennai Institute of Technology · Engineering sub-1 GFLOP Edge AI models, low-level Linux kernel interception, and offline agent runtimes.",
   education: {
     institution: "Chennai Institute of Technology",
     degree: "B.E. Computer Science & Engineering (AI & ML)",
@@ -82,8 +82,8 @@ export const EXPERIENCES: Experience[] = [
     type: "Edge AI & Autonomous Systems",
     highlight: "Engineered sub-1 GFLOP real-time detection achieving 96% mAP and 30+ FPS on-device via TensorRT INT8.",
     description: [
-      "Engineered a sub-1 GFLOP real-time object detection model (NanoDet backbone, YOLO-style heads), achieving 96% mAP and 30+ FPS on-device inference via TensorRT INT8 quantization.",
-      "Evaluated FP32 vs. INT8 and backbone trade-offs to meet strict compute constraints for autonomous drone payloads; presented results at NIDAR 2025.",
+      "Engineered sub-1 GFLOP object detection (NanoDet backbone, YOLO heads), achieving 96% mAP and 30+ FPS via TensorRT INT8.",
+      "Evaluated FP32 vs. INT8 trade-offs under strict compute bounds for autonomous drone payloads at NIDAR 2025.",
     ],
     technologies: ["Python", "PyTorch", "TensorRT", "CUDA", "Linux"],
   },
@@ -122,10 +122,9 @@ export const PROJECTS: Project[] = [
     category: "Edge AI & ML",
     githubUrl: "https://github.com/ravindran-dev/microdet_v2",
     description: [
-      "Engineered an anchor-free person detector for drone imagery with a NanoDet-style backbone and YOLO-style heads.",
-      "Optimized with DFL, QFL, GIoU losses, multi-scale strides, AMP, EMA, and NMS, achieving 96% mAP@0.5 and 30+ FPS at sub-1 GFLOP.",
-      "Outperformed a MobileNetV2-SSD baseline (~89% mAP) via TensorRT INT8 quantized edge deployment.",
-      "Evaluated FP32 vs. INT8 precision and backbone trade-offs to meet strict compute constraints for autonomous drone payloads; presented results at NIDAR 2025.",
+      "Engineered anchor-free drone detector with NanoDet backbone and YOLO-style heads.",
+      "Optimized with DFL, QFL, GIoU losses, multi-scale strides, and AMP for 96% mAP@0.5 at 30+ FPS (<1 GFLOP).",
+      "Outperformed MobileNetV2-SSD baseline via TensorRT INT8 quantization for embedded drone payloads.",
     ],
     metrics: ["<1.0 GFLOP Budget", "96% mAP@0.5", "30+ FPS INT8 Inference", "vs 89% MobileNetV2 Baseline"],
     technologies: ["Python", "PyTorch", "OpenCV", "CUDA", "TensorRT"],
@@ -153,10 +152,9 @@ export const PROJECTS: Project[] = [
     category: "IoT & Full-Stack",
     githubUrl: "https://github.com/ravindran-dev/Machine-Guard-AI",
     description: [
-      "Developed an event-driven pipeline: ESP32 sensors to MQTT to Flask REST to ML inference to Firebase/React.",
-      "Deployed a quantized TensorFlow Lite model at the edge, achieving 94% accuracy with low inference overhead.",
-      "Built a distributed architecture handling 1000+ msgs/sec at <50 ms latency, with live dashboard alerts and a Kotlin app.",
-      "Awarded 1st Place Grand Winner at Ti Forge National Hackathon (Rs. 50,000 cash prize).",
+      "Event-driven IoT pipeline: ESP32 sensors to MQTT, Flask REST, ML inference, and Firebase/React.",
+      "Deployed quantized TensorFlow Lite at edge, achieving 94% accuracy with minimal overhead.",
+      "Handled 1000+ msgs/sec at <50 ms latency; won 1st Place at Ti Forge National Hackathon.",
     ],
     metrics: ["1000+ msgs/sec", "<50 ms Latency", "94% Anomaly Accuracy", "Rs. 50,000 Hackathon Winner"],
     technologies: ["ESP32", "MQTT", "Flask", "TFLite", "PostgreSQL", "Firebase", "React", "Kotlin"],

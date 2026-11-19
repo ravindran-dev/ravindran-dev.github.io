@@ -1,40 +1,114 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowDownToLine, ArrowUpRight, Package } from "lucide-react";
+import { ArrowDownToLine, ArrowUpRight, Cpu, Package, Terminal } from "lucide-react";
 import type { CSSProperties } from "react";
 import type { Product } from "@/data/products";
 
 export function ProductCard({ product }: { product: Product }) {
+  const hasDownloads = Boolean(product.downloads?.length);
+  const primaryDownload = product.downloads?.[0];
+
   return (
-    <article className="product-card group" style={{ "--product-accent": product.accent } as CSSProperties}>
-      <div className="flex items-start justify-between gap-4">
-        <div className="flex items-center gap-3">
-          <div className={`product-icon ${product.slug === "arch-linux-dev-pack" ? "product-icon-arch" : ""}`}>
-            {product.slug === "arch-linux-dev-pack" ? <><Image src="/products/archlinux-logo.svg" alt="" width={27} height={27} /><Image src="/products/linux-penguin.png" alt="" width={25} height={30} /></> : product.slug === "archon" ? <Image src="/products/linux-penguin.png" alt="" width={33} height={40} /> : product.icon ? <Image src={product.icon} alt="" width={44} height={44} /> : <Package size={21} />}
+    <article
+      className="product-card group flex flex-col justify-between"
+      style={{ "--product-accent": product.accent } as CSSProperties}
+    >
+      <div>
+        {/* Top bar: Icon, category, and status */}
+        <div className="flex items-start justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <div
+              className={`product-icon ${
+                product.slug === "arch-linux-dev-pack"
+                  ? "product-icon-arch"
+                  : ""
+              }`}
+            >
+              {product.slug === "arch-linux-dev-pack" ? (
+                <>
+                  <Image src="/products/archlinux-logo.svg" alt="" width={24} height={24} unoptimized />
+                  <Image src="/products/linux-penguin.png" alt="" width={22} height={26} unoptimized />
+                </>
+              ) : product.slug === "archon" ? (
+                <Image src="/products/linux-penguin.png" alt="" width={30} height={36} unoptimized />
+              ) : product.icon ? (
+                <Image src={product.icon} alt="" width={40} height={40} unoptimized />
+              ) : (
+                <Package size={20} />
+              )}
+            </div>
+            <div>
+              <span className="text-[11px] font-mono uppercase tracking-wider text-muted">
+                {product.category}
+              </span>
+              <h3 className="font-display text-xl uppercase tracking-normal text-foreground group-hover:text-[#ffe17c] transition-colors">
+                {product.name}
+              </h3>
+            </div>
           </div>
-          <div>
-            <p className="text-[11px] font-mono uppercase tracking-wider text-muted">{product.category}</p>
-            <h3 className="mt-1 text-lg font-semibold tracking-tight text-foreground">{product.name}</h3>
-          </div>
+          <span className="product-status flex items-center gap-1.5 shrink-0">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#ffe17c] animate-pulse" />
+            {product.status}
+          </span>
         </div>
-        <span className="product-status">{product.status}</span>
+
+        {/* Positioning tagline & description */}
+        <p className="mt-4 text-xs font-medium text-foreground line-clamp-1">
+          {product.positioning}
+        </p>
+        <p className="mt-2 text-xs leading-relaxed text-muted line-clamp-2">
+          {product.description}
+        </p>
+
+        {/* Tags / Platforms metadata */}
+        <div className="mt-4 flex flex-wrap gap-1.5">
+          {product.latestTag && (
+            <span className="product-meta font-mono">
+              tag v{product.latestTag}
+            </span>
+          )}
+          {product.platforms.slice(0, 1).map((platform) => (
+            <span className="product-meta" key={platform}>
+              {platform.split("(")[0].trim()}
+            </span>
+          ))}
+          {product.languages.slice(0, 2).map((lang) => (
+            <span className="product-meta" key={lang}>
+              {lang}
+            </span>
+          ))}
+        </div>
       </div>
-      <p className="mt-5 min-h-12 text-sm leading-6 text-muted">{product.description}</p>
-      <div className="mt-5 flex flex-wrap gap-2">
-        {(product.latestTag ? [`Latest tag v${product.latestTag}`] : product.developmentVersion ? [`Dev ${product.developmentVersion}`] : ["No Git tag"]).map((version) => (
-          <span className="product-meta" key={version}>{version}</span>
-        ))}
-        {product.platforms.slice(0, 2).map((platform) => <span className="product-meta" key={platform}>{platform}</span>)}
-      </div>
-      <div className="mt-7 flex items-center justify-between border-t border-border/70 pt-4">
-        <Link href={`/${product.slug}`} className="inline-flex items-center gap-2 text-sm font-semibold text-foreground transition-colors hover:text-primary">
-          View product <ArrowUpRight size={15} />
+
+      {/* Bottom action footer */}
+      <div className="mt-6 flex items-center justify-between border-t border-border/70 pt-3.5">
+        <Link
+          href={`/${product.slug}`}
+          className="inline-flex items-center gap-1.5 text-xs font-semibold text-foreground transition-colors hover:text-primary"
+        >
+          Explore Release <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </Link>
-        {product.downloads?.length ? <a href={product.downloads[0].url} className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted transition-colors hover:text-foreground" aria-label={`Download ${product.name} ${product.downloads[0].format}`}>
-          <ArrowDownToLine size={14} /> Download {product.downloads[0].status === "development" ? "Debug " : ""}{product.downloads[0].format}
-        </a> : <Link href={`/${product.slug}#install`} className="inline-flex items-center gap-1.5 text-xs font-medium text-muted transition-colors hover:text-foreground" aria-label={`Build or install ${product.name}`}>
-          <ArrowDownToLine size={14} /> Source &amp; install
-        </Link>}
+        {hasDownloads && primaryDownload ? (
+          <a
+            href={primaryDownload.url}
+            className="inline-flex items-center gap-1.5 rounded-md bg-surface-muted px-2.5 py-1 text-xs font-medium text-foreground border border-border/80 transition-colors hover:bg-primary/10 hover:border-primary/40 hover:text-primary"
+            aria-label={`Download ${product.name} ${primaryDownload.format}`}
+          >
+            <ArrowDownToLine size={13} className="text-primary" />
+            <span>{primaryDownload.format}</span>
+            <span className="text-[10px] text-muted">
+              ({(primaryDownload.size / (1024 * 1024)).toFixed(0)}MB)
+            </span>
+          </a>
+        ) : (
+          <Link
+            href={`/${product.slug}#install`}
+            className="inline-flex items-center gap-1.5 text-xs font-medium text-muted transition-colors hover:text-foreground"
+            aria-label={`Build or install ${product.name}`}
+          >
+            <Terminal size={13} /> Source &amp; install
+          </Link>
+        )}
       </div>
     </article>
   );

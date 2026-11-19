@@ -5,12 +5,12 @@ import { Github, Linkedin, Mail, ArrowUpRight, Terminal } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="mt-20 border-t border-border bg-surface-muted/50 dark:bg-zinc-950 py-12 text-muted text-sm">
+    <footer className="mt-20 border-t border-[#171e19]/10 dark:border-[#b7c6c2]/10 bg-surface-muted/50 dark:bg-[#171e19] py-12 text-muted text-sm">
       <div className="w-full max-w-7xl 2xl:max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12 space-y-8">
         {/* Terminal Portfolio Promo Banner in Footer */}
-        <div className="p-4 sm:p-5 rounded-xl border border-emerald-500/30 bg-emerald-500/5 dark:bg-emerald-950/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="p-4 sm:p-5 rounded-2xl border border-[#ffe17c]/30 bg-[#ffe17c]/5 dark:bg-[#202a24] flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3 text-center sm:text-left">
-            <div className="w-9 h-9 rounded-lg bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
+            <div className="w-9 h-9 rounded-xl bg-[#ffe17c]/20 text-[#171e19] dark:text-[#ffe17c] flex items-center justify-center shrink-0">
               <Terminal className="w-5 h-5" />
             </div>
             <div>
@@ -26,7 +26,7 @@ export function Footer() {
             href={PERSONAL_INFO.terminalPortfolioUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-mono font-semibold shadow-xs transition-colors shrink-0"
+            className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-[#ffe17c] hover:bg-[#f5d45d] text-[#171e19] text-xs font-mono font-bold shadow-xs transition-colors shrink-0"
           >
             <span>Launch Linux Terminal</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
@@ -36,15 +36,15 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Brand & Summary */}
           <div className="space-y-1 text-center md:text-left">
-            <div className="flex items-center justify-center md:justify-start gap-2 font-heading font-bold text-foreground">
-              <span>{PERSONAL_INFO.name}</span>
-              <span className="text-xs font-mono text-muted">|</span>
-              <span className="text-xs text-muted font-normal">
+            <div className="flex items-center justify-center md:justify-start font-display text-2xl tracking-normal text-foreground">
+              <span>RAVINDRAN S</span>
+              <span className="text-[#ffe17c]">.</span>
+              <span className="text-xs font-mono text-muted font-normal ml-2">
                 {PERSONAL_INFO.title}
               </span>
             </div>
-            <p className="text-xs text-muted max-w-sm">
-              Focused on high-performance Edge AI inference, systems engineering, and scalable distributed architectures.
+            <p className="text-xs font-sans text-muted max-w-sm">
+              Focused on high-performance low-level systems, local AI agent runtimes, and developer toolchains.
             </p>
           </div>
 

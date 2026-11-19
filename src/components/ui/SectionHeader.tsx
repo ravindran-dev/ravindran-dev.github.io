@@ -32,11 +32,12 @@ export function SectionHeader({
     >
       <div className={cn("space-y-1.5", align === "center" && "max-w-2xl mx-auto")}>
         {badge && (
-          <span className="text-xs font-mono uppercase tracking-wider text-primary font-semibold">
-            {badge}
-          </span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#171e19]/15 dark:border-[#b7c6c2]/20 text-xs font-mono font-bold tracking-widest uppercase">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#ffe17c] animate-pulse" />
+            <span>{badge}</span>
+          </div>
         )}
-        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground font-heading">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display uppercase leading-[0.95] text-foreground mt-2">
           {title}
         </h2>
         {description && (

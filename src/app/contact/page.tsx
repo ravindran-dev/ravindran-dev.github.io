@@ -106,9 +106,9 @@ export default function ContactPage() {
 
           <div className="space-y-3">
             {/* Email Card */}
-            <Card className="p-4 flex items-center justify-between gap-3">
+            <Card className="p-4 flex items-center justify-between gap-3 hover:border-[#ffe17c]/50 transition-all">
               <div className="flex items-center gap-3 min-w-0">
-                <div className="w-9 h-9 rounded-lg bg-blue-50 dark:bg-blue-950/60 text-primary flex items-center justify-center shrink-0">
+                <div className="w-9 h-9 rounded-xl bg-[#ffe17c]/20 text-[#171e19] dark:text-[#ffe17c] flex items-center justify-center shrink-0">
                   <Mail className="w-4 h-4" />
                 </div>
                 <div className="min-w-0">
@@ -117,7 +117,7 @@ export default function ContactPage() {
                   </span>
                   <a
                     href={`mailto:${PERSONAL_INFO.email}`}
-                    className="text-xs sm:text-sm font-mono font-medium text-foreground hover:text-primary transition-colors truncate block"
+                    className="text-xs sm:text-sm font-mono font-medium text-foreground hover:text-[#ffe17c] transition-colors truncate block"
                   >
                     {PERSONAL_INFO.email}
                   </a>
@@ -126,12 +126,12 @@ export default function ContactPage() {
               <button
                 type="button"
                 onClick={handleCopyEmail}
-                className="p-2 rounded-lg border border-border hover:bg-surface-muted text-muted hover:text-foreground transition-colors shrink-0"
+                className="p-2 rounded-xl border border-border hover:bg-surface-muted text-muted hover:text-foreground transition-colors shrink-0"
                 aria-label="Copy Email Address"
                 title="Copy Email"
               >
                 {copiedEmail ? (
-                  <Check className="w-4 h-4 text-emerald-600" />
+                  <Check className="w-4 h-4 text-emerald-500" />
                 ) : (
                   <Copy className="w-4 h-4" />
                 )}
@@ -140,9 +140,9 @@ export default function ContactPage() {
 
             {/* Phone Card */}
             {PERSONAL_INFO.phone && (
-              <Card className="p-4 flex items-center justify-between gap-3">
+              <Card className="p-4 flex items-center justify-between gap-3 hover:border-[#ffe17c]/50 transition-all">
                 <div className="flex items-center gap-3 min-w-0">
-                  <div className="w-9 h-9 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
+                  <div className="w-9 h-9 rounded-xl bg-[#ffe17c]/20 text-[#171e19] dark:text-[#ffe17c] flex items-center justify-center shrink-0">
                     <Phone className="w-4 h-4" />
                   </div>
                   <div className="min-w-0">
@@ -151,7 +151,7 @@ export default function ContactPage() {
                     </span>
                     <a
                       href={`tel:${PERSONAL_INFO.phone.replace(/\s+/g, "")}`}
-                      className="text-xs sm:text-sm font-mono font-medium text-foreground hover:text-primary transition-colors truncate block"
+                      className="text-xs sm:text-sm font-mono font-medium text-foreground hover:text-[#ffe17c] transition-colors truncate block"
                     >
                       {PERSONAL_INFO.phone}
                     </a>
@@ -159,7 +159,7 @@ export default function ContactPage() {
                 </div>
                 <a
                   href={`tel:${PERSONAL_INFO.phone.replace(/\s+/g, "")}`}
-                  className="p-2 rounded-lg border border-border hover:bg-surface-muted text-muted hover:text-foreground transition-colors shrink-0"
+                  className="p-2 rounded-xl border border-border hover:bg-surface-muted text-muted hover:text-foreground transition-colors shrink-0"
                   aria-label="Call Direct"
                   title="Direct Call"
                 >
@@ -188,15 +188,15 @@ export default function ContactPage() {
               href={PERSONAL_INFO.terminalPortfolioUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="block p-4 rounded-xl border border-emerald-500/40 bg-gradient-to-r from-emerald-500/10 via-emerald-500/5 to-transparent hover:border-emerald-500 hover:shadow-md transition-all group"
+              className="block p-4 rounded-xl border border-[#171e19]/15 dark:border-[#ffe17c]/30 bg-surface-muted hover:border-[#ffe17c] hover:shadow-md transition-all group"
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-lg bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
+                  <div className="w-9 h-9 rounded-lg bg-[#ffe17c]/20 text-[#171e19] dark:text-[#ffe17c] flex items-center justify-center shrink-0">
                     <Terminal className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-[10px] font-mono text-emerald-600 dark:text-emerald-400 uppercase font-semibold block">
+                    <span className="text-[10px] font-mono text-[#171e19] dark:text-[#ffe17c] uppercase font-bold block">
                       Retro Shell
                     </span>
                     <p className="text-xs sm:text-sm font-bold text-foreground font-heading">
@@ -204,7 +204,7 @@ export default function ContactPage() {
                     </p>
                   </div>
                 </div>
-                <ExternalLink className="w-4 h-4 text-emerald-600 dark:text-emerald-400 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <ExternalLink className="w-4 h-4 text-[#171e19] dark:text-[#ffe17c] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </div>
               <p className="text-xs text-muted mt-2">
                 Experience an interactive Arch Linux style CLI terminal interface with custom shell commands.
@@ -255,38 +255,38 @@ export default function ContactPage() {
                 <h3 className="text-lg sm:text-xl font-bold text-foreground font-heading">
                   Direct In-Web Message
                 </h3>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300 font-semibold border border-emerald-200 dark:border-emerald-800">
+                <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-[#ffe17c]/20 text-[#171e19] dark:text-[#ffe17c] font-bold border border-[#ffe17c]/40">
                   Direct Delivery
                 </span>
               </div>
               <p className="text-xs text-muted">
-                Delivered straight to my primary inbox ({PERSONAL_INFO.email}) without opening your email client.
+                Delivered straight to my primary inbox ({PERSONAL_INFO.email}).
               </p>
             </div>
 
             {error && (
-              <div className="mb-5 p-3.5 rounded-lg bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-800/50 flex items-start gap-2.5 text-xs sm:text-sm text-red-700 dark:text-red-300">
+              <div className="mb-5 p-3.5 rounded-xl bg-red-500/10 border border-red-500/20 text-red-500 flex items-start gap-2.5 text-xs sm:text-sm">
                 <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
                 <span>{error}</span>
               </div>
             )}
 
             {success ? (
-              <div className="p-8 rounded-xl bg-emerald-50/80 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/50 text-center space-y-3">
-                <div className="w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-900/60 text-emerald-600 dark:text-emerald-400 mx-auto flex items-center justify-center shadow-xs">
+              <div className="p-8 rounded-2xl bg-[#ffe17c]/10 dark:bg-[#202a24] border border-[#ffe17c]/30 text-center space-y-3">
+                <div className="w-12 h-12 rounded-full bg-[#ffe17c]/20 text-[#171e19] dark:text-[#ffe17c] mx-auto flex items-center justify-center shadow-xs">
                   <Check className="w-6 h-6" />
                 </div>
                 <h4 className="text-base font-bold text-foreground font-heading">
                   Message Sent Successfully!
                 </h4>
                 <p className="text-xs sm:text-sm text-muted max-w-sm mx-auto leading-relaxed">
-                  Thank you for reaching out. Your message has been delivered directly to <strong>{PERSONAL_INFO.email}</strong>. I will get back to you shortly.
+                  Thank you for reaching out. Your message has been delivered directly to <strong>{PERSONAL_INFO.email}</strong>.
                 </p>
                 <div className="pt-3">
                   <button
                     type="button"
                     onClick={() => setSuccess(false)}
-                    className="text-xs font-semibold text-primary hover:underline"
+                    className="text-xs font-bold text-[#ffe17c] hover:underline"
                   >
                     Send another message
                   </button>
@@ -297,7 +297,7 @@ export default function ContactPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
                     <label className="font-mono text-muted block text-xs">
-                      Your Name <span className="text-primary">*</span>
+                      Your Name <span className="text-[#ffe17c]">*</span>
                     </label>
                     <input
                       type="text"
@@ -307,13 +307,13 @@ export default function ContactPage() {
                         setFormData({ ...formData, name: e.target.value })
                       }
                       placeholder="Alex Smith"
-                      className="w-full px-3.5 py-2.5 rounded-lg border border-border bg-surface text-foreground text-sm placeholder:text-muted/50 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-border bg-surface text-foreground text-sm placeholder:text-muted/50 focus:outline-none focus:ring-1 focus:ring-[#ffe17c] focus:border-[#ffe17c] transition-all"
                     />
                   </div>
 
                   <div className="space-y-1.5">
                     <label className="font-mono text-muted block text-xs">
-                      Your Email <span className="text-primary">*</span>
+                      Your Email <span className="text-[#ffe17c]">*</span>
                     </label>
                     <input
                       type="email"
@@ -323,7 +323,7 @@ export default function ContactPage() {
                         setFormData({ ...formData, email: e.target.value })
                       }
                       placeholder="alex@company.com"
-                      className="w-full px-3.5 py-2.5 rounded-lg border border-border bg-surface text-foreground text-sm placeholder:text-muted/50 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-border bg-surface text-foreground text-sm placeholder:text-muted/50 focus:outline-none focus:ring-1 focus:ring-[#ffe17c] focus:border-[#ffe17c] transition-all"
                     />
                   </div>
                 </div>
@@ -339,13 +339,13 @@ export default function ContactPage() {
                       setFormData({ ...formData, subject: e.target.value })
                     }
                     placeholder="SDE Opportunity / Technical Inquiry"
-                    className="w-full px-3.5 py-2.5 rounded-lg border border-border bg-surface text-foreground text-sm placeholder:text-muted/50 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-border bg-surface text-foreground text-sm placeholder:text-muted/50 focus:outline-none focus:ring-1 focus:ring-[#ffe17c] focus:border-[#ffe17c] transition-all"
                   />
                 </div>
 
                 <div className="space-y-1.5">
                   <label className="font-mono text-muted block text-xs">
-                    Message <span className="text-primary">*</span>
+                    Message <span className="text-[#ffe17c]">*</span>
                   </label>
                   <textarea
                     rows={5}
@@ -355,14 +355,14 @@ export default function ContactPage() {
                       setFormData({ ...formData, message: e.target.value })
                     }
                     placeholder="Hi Ravindran, I came across your portfolio and would like to discuss..."
-                    className="w-full px-3.5 py-2.5 rounded-lg border border-border bg-surface text-foreground text-sm placeholder:text-muted/50 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-y"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-border bg-surface text-foreground text-sm placeholder:text-muted/50 focus:outline-none focus:ring-1 focus:ring-[#ffe17c] focus:border-[#ffe17c] transition-all resize-y"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-3 rounded-lg bg-primary hover:bg-primary-hover disabled:opacity-60 text-white text-xs sm:text-sm font-semibold shadow-xs transition-colors flex items-center justify-center gap-2"
+                  className="w-full py-3.5 rounded-xl bg-[#ffe17c] hover:bg-[#f5d45d] disabled:opacity-60 text-[#171e19] text-xs sm:text-sm font-bold shadow-xs transition-transform hover:scale-[1.01] flex items-center justify-center gap-2"
                 >
                   {loading ? (
                     <>
@@ -386,13 +386,13 @@ export default function ContactPage() {
       <div className="flex items-center justify-between pt-6 border-t border-border">
         <Link
           href="/achievements"
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-muted hover:text-foreground transition-colors px-3 py-2 rounded-lg hover:bg-surface-muted"
+          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-muted hover:text-foreground transition-colors px-3 py-2 rounded-lg hover:bg-surface-muted"
         >
           <span>← Achievements &amp; Accolades</span>
         </Link>
         <Link
           href="/"
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-white bg-primary hover:bg-primary-hover px-4 py-2 rounded-lg shadow-xs transition-colors"
+          className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#171e19] bg-[#ffe17c] hover:bg-[#f5d45d] px-5 py-2.5 rounded-xl shadow-xs transition-transform hover:scale-105"
         >
           <span>Return to Home</span>
           <ArrowRight className="w-4 h-4" />

@@ -68,11 +68,11 @@ export default function AchievementsPage() {
               >
                 <div>
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-[10px] font-mono text-primary font-bold uppercase tracking-wider">
+                    <span className="text-[10px] font-mono text-[#ffe17c] font-bold uppercase tracking-wider">
                       {item.category}
                     </span>
                     {item.badgeText && (
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-500/10 text-blue-700 dark:text-blue-300 font-semibold border border-blue-500/20">
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#ffe17c]/20 text-[#171e19] dark:text-[#ffe17c] font-bold border border-[#ffe17c]/40">
                         {item.badgeText}
                       </span>
                     )}
@@ -86,7 +86,7 @@ export default function AchievementsPage() {
                 </div>
                 <div className="pt-3 mt-3 border-t border-border/60 flex items-center justify-between text-xs font-mono text-foreground font-semibold">
                   <span className="truncate max-w-[150px]">{item.organization}</span>
-                  <span className="text-primary shrink-0">{item.metric}</span>
+                  <span className="text-[#ffe17c] shrink-0 font-bold">{item.metric}</span>
                 </div>
               </div>
             ))}
@@ -109,9 +109,9 @@ export default function AchievementsPage() {
               type="button"
               onClick={() => setActiveTab(cat)}
               className={cn(
-                "px-4 py-2 rounded-full text-xs font-medium transition-all shrink-0 select-none flex items-center gap-1.5",
+                "px-4 py-2 rounded-full text-xs font-semibold transition-all shrink-0 select-none flex items-center gap-1.5",
                 isSelected
-                  ? "bg-primary text-white shadow-xs font-semibold"
+                  ? "bg-[#ffe17c] text-[#171e19] shadow-xs font-bold"
                   : "bg-surface-muted border border-border/80 text-muted hover:text-foreground hover:bg-surface"
               )}
             >
@@ -120,7 +120,7 @@ export default function AchievementsPage() {
                 className={cn(
                   "text-[10px] px-1.5 py-0.2 rounded-full font-mono",
                   isSelected
-                    ? "bg-white/20 text-white"
+                    ? "bg-[#171e19]/15 text-[#171e19] font-bold"
                     : "bg-surface border border-border/60 text-muted"
                 )}
               >
@@ -150,8 +150,8 @@ export default function AchievementsPage() {
               >
                 <Card
                   className={cn(
-                    "p-6 space-y-4 h-full flex flex-col justify-between transition-all duration-200 border-border/80 hover:border-border",
-                    item.highlight && "ring-1 ring-primary/20 bg-primary/[0.015]"
+                    "p-6 space-y-4 h-full flex flex-col justify-between transition-all duration-200 border-border/80 hover:border-[#ffe17c]/50",
+                    item.highlight && "ring-1 ring-[#ffe17c]/40 bg-[#ffe17c]/[0.03]"
                   )}
                 >
                   <div className="space-y-3.5">
@@ -159,13 +159,13 @@ export default function AchievementsPage() {
                     <div className="flex items-center justify-between gap-2 pb-3 border-b border-border/60">
                       <div className="flex items-center gap-2">
                         {isCP ? (
-                          <Code2 className="w-4 h-4 text-primary" />
+                          <Code2 className="w-4 h-4 text-[#ffe17c]" />
                         ) : isHack ? (
-                          <Trophy className="w-4 h-4 text-amber-500" />
+                          <Trophy className="w-4 h-4 text-[#ffe17c]" />
                         ) : isCert ? (
-                          <ShieldCheck className="w-4 h-4 text-emerald-500" />
+                          <ShieldCheck className="w-4 h-4 text-[#ffe17c]" />
                         ) : (
-                          <GitPullRequest className="w-4 h-4 text-purple-500" />
+                          <GitPullRequest className="w-4 h-4 text-[#ffe17c]" />
                         )}
                         <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-muted">
                           {item.organization}
@@ -173,16 +173,7 @@ export default function AchievementsPage() {
                       </div>
 
                       {item.badgeText && (
-                        <span
-                          className={cn(
-                            "text-[10px] font-mono px-2 py-0.5 rounded-full font-semibold border",
-                            isHack
-                              ? "bg-amber-500/10 text-amber-700 dark:text-amber-300 border-amber-500/20"
-                              : isCP
-                              ? "bg-blue-500/10 text-blue-700 dark:text-blue-300 border-blue-500/20"
-                              : "bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border-emerald-500/20"
-                          )}
-                        >
+                        <span className="text-[10px] font-mono px-2 py-0.5 rounded-full font-bold border bg-[#ffe17c]/15 text-[#171e19] dark:text-[#ffe17c] border-[#ffe17c]/30">
                           {item.badgeText}
                         </span>
                       )}
@@ -194,7 +185,7 @@ export default function AchievementsPage() {
                         {item.title}
                       </h4>
                       <div className="flex items-center gap-2">
-                        <span className="text-sm font-mono font-bold text-primary">
+                        <span className="text-sm font-mono font-bold text-[#171e19] dark:text-[#ffe17c]">
                           {item.metric}
                         </span>
                         {item.date && (
@@ -240,7 +231,7 @@ export default function AchievementsPage() {
         </Link>
         <Link
           href="/contact"
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-white bg-primary hover:bg-primary-hover px-4 py-2 rounded-lg shadow-xs transition-colors"
+          className="inline-flex items-center gap-1.5 text-sm font-bold text-[#171e19] bg-[#ffe17c] hover:bg-[#f5d45d] px-4 py-2 rounded-xl shadow-xs transition-all hover:scale-105"
         >
           <span>Get in Touch</span>
           <ArrowRight className="w-4 h-4" />

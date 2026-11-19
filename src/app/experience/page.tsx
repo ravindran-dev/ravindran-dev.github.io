@@ -37,7 +37,7 @@ export default function ExperiencePage() {
         {EXPERIENCES.map((exp, idx) => (
           <div key={idx} className="relative group">
             {/* Timeline Node Icon */}
-            <div className="absolute -left-[30px] sm:-left-[38px] top-1.5 w-6 sm:w-8 h-6 sm:h-8 rounded-full border-2 border-white dark:border-zinc-950 bg-primary flex items-center justify-center text-white shadow-xs group-hover:scale-110 transition-transform">
+            <div className="absolute -left-[30px] sm:-left-[38px] top-1.5 w-6 sm:w-8 h-6 sm:h-8 rounded-full border-2 border-[#ffe17c] bg-white dark:bg-[#171e19] flex items-center justify-center text-[#171e19] dark:text-[#ffe17c] shadow-xs group-hover:scale-110 transition-transform">
               {idx === 0 ? (
                 <Cpu className="w-3 sm:w-3.5 h-3 sm:h-3.5" />
               ) : idx === 1 ? (
@@ -48,30 +48,30 @@ export default function ExperiencePage() {
             </div>
 
             {/* Experience Card */}
-            <Card className="p-6 sm:p-7 space-y-5">
+            <Card className="p-6 sm:p-7 space-y-5 hover:border-[#ffe17c]/40 transition-all">
               {/* Header Details */}
               <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 pb-4 border-b border-border/60">
                 <div className="space-y-1">
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-mono text-primary uppercase tracking-wide font-semibold">
+                    <span className="text-xs font-mono text-[#171e19] dark:text-[#ffe17c] uppercase tracking-wide font-bold">
                       {exp.type}
                     </span>
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold text-foreground font-heading">
                     {exp.role}
                   </h3>
-                  <p className="text-sm font-medium text-foreground/90">
+                  <p className="text-sm font-medium text-foreground">
                     {exp.company}
                   </p>
                 </div>
 
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="inline-flex items-center gap-1 text-xs font-mono px-2.5 py-1 rounded bg-surface-muted border border-border text-muted">
+                  <span className="inline-flex items-center gap-1 text-xs font-mono px-2.5 py-1 rounded-lg bg-surface-muted border border-border text-muted">
                     <Calendar className="w-3 h-3" />
                     {exp.period}
                   </span>
                   {exp.location && (
-                    <span className="inline-flex items-center gap-1 text-xs font-mono px-2.5 py-1 rounded bg-surface-muted border border-border text-muted">
+                    <span className="inline-flex items-center gap-1 text-xs font-mono px-2.5 py-1 rounded-lg bg-surface-muted border border-border text-muted">
                       <MapPin className="w-3 h-3" />
                       {exp.location}
                     </span>
@@ -81,17 +81,17 @@ export default function ExperiencePage() {
 
               {/* Highlight callout if present */}
               {exp.highlight && (
-                <div className="p-3 rounded-lg bg-blue-50/70 border border-blue-100 dark:bg-blue-950/30 dark:border-blue-900/50 flex items-start gap-2 text-xs sm:text-sm text-blue-900 dark:text-blue-200">
-                  <Sparkles className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                <div className="p-3.5 rounded-xl bg-[#ffe17c]/10 border border-[#ffe17c]/30 dark:bg-[#202a24] flex items-start gap-2 text-xs sm:text-sm text-foreground">
+                  <Sparkles className="w-4 h-4 text-[#ffe17c] shrink-0 mt-0.5" />
                   <span><strong>Key Deliverable:</strong> {exp.highlight}</span>
                 </div>
               )}
 
               {/* Bullet points */}
-              <div className="space-y-2.5 text-xs sm:text-sm text-muted leading-relaxed">
+              <div className="space-y-2 text-xs sm:text-sm text-muted leading-relaxed">
                 {exp.description.map((desc, dIdx) => (
                   <div key={dIdx} className="flex items-start gap-2.5">
-                    <span className="text-primary font-bold mt-0.5">•</span>
+                    <span className="text-[#ffe17c] font-bold mt-0.5">•</span>
                     <span>{desc}</span>
                   </div>
                 ))}
@@ -121,7 +121,7 @@ export default function ExperiencePage() {
         </Link>
         <Link
           href="/projects"
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-white bg-primary hover:bg-primary-hover px-4 py-2 rounded-lg shadow-xs transition-colors"
+          className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#171e19] bg-[#ffe17c] hover:bg-[#f5d45d] px-5 py-2.5 rounded-xl shadow-xs transition-transform hover:scale-105"
         >
           <span>View Featured Projects</span>
           <ArrowRight className="w-4 h-4" />

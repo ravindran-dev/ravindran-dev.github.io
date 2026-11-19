@@ -23,6 +23,7 @@ import {
   Zap,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ProductSpotlightBanner } from "@/components/products/ProductSpotlightBanner";
 
 const CATEGORY_META: Record<
   string,
@@ -35,33 +36,33 @@ const CATEGORY_META: Record<
 > = {
   Languages: {
     icon: Code2,
-    badgeColor: "text-blue-600 dark:text-blue-400 bg-blue-500/10 border-blue-500/20",
-    gradient: "from-blue-500/10 via-transparent to-transparent",
-    borderAccent: "group-hover:border-blue-500/40",
+    badgeColor: "text-[#171e19] dark:text-[#ffe17c] bg-[#ffe17c]/15 border-[#ffe17c]/30 font-bold",
+    gradient: "from-[#ffe17c]/10 via-transparent to-transparent",
+    borderAccent: "group-hover:border-[#ffe17c]/50",
   },
   "ML / AI": {
     icon: Cpu,
-    badgeColor: "text-purple-600 dark:text-purple-400 bg-purple-500/10 border-purple-500/20",
-    gradient: "from-purple-500/10 via-transparent to-transparent",
-    borderAccent: "group-hover:border-purple-500/40",
+    badgeColor: "text-[#171e19] dark:text-[#ffe17c] bg-[#ffe17c]/15 border-[#ffe17c]/30 font-bold",
+    gradient: "from-[#ffe17c]/10 via-transparent to-transparent",
+    borderAccent: "group-hover:border-[#ffe17c]/50",
   },
   "Systems & Infrastructure": {
     icon: Server,
-    badgeColor: "text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 border-emerald-500/20",
-    gradient: "from-emerald-500/10 via-transparent to-transparent",
-    borderAccent: "group-hover:border-emerald-500/40",
+    badgeColor: "text-[#171e19] dark:text-[#ffe17c] bg-[#ffe17c]/15 border-[#ffe17c]/30 font-bold",
+    gradient: "from-[#ffe17c]/10 via-transparent to-transparent",
+    borderAccent: "group-hover:border-[#ffe17c]/50",
   },
   "Web & Full-Stack": {
     icon: Globe,
-    badgeColor: "text-amber-600 dark:text-amber-400 bg-amber-500/10 border-amber-500/20",
-    gradient: "from-amber-500/10 via-transparent to-transparent",
-    borderAccent: "group-hover:border-amber-500/40",
+    badgeColor: "text-[#171e19] dark:text-[#ffe17c] bg-[#ffe17c]/15 border-[#ffe17c]/30 font-bold",
+    gradient: "from-[#ffe17c]/10 via-transparent to-transparent",
+    borderAccent: "group-hover:border-[#ffe17c]/50",
   },
   "Core Competencies": {
     icon: Binary,
-    badgeColor: "text-cyan-600 dark:text-cyan-400 bg-cyan-500/10 border-cyan-500/20",
-    gradient: "from-cyan-500/10 via-transparent to-transparent",
-    borderAccent: "group-hover:border-cyan-500/40",
+    badgeColor: "text-[#171e19] dark:text-[#ffe17c] bg-[#ffe17c]/15 border-[#ffe17c]/30 font-bold",
+    gradient: "from-[#ffe17c]/10 via-transparent to-transparent",
+    borderAccent: "group-hover:border-[#ffe17c]/50",
   },
 };
 
@@ -89,8 +90,8 @@ export default function SkillsPage() {
 
       {/* High-Level Capabilities Matrix Banner */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
-        <div className="p-4 rounded-xl border border-blue-500/20 bg-blue-500/5 dark:bg-blue-950/20 space-y-1">
-          <div className="flex items-center justify-between text-blue-600 dark:text-blue-400">
+        <div className="p-4 rounded-2xl border border-[#171e19]/15 dark:border-[#b7c6c2]/15 bg-card space-y-1 transition-all hover:border-[#ffe17c]">
+          <div className="flex items-center justify-between text-[#ffe17c]">
             <Code2 className="w-4 h-4" />
             <span className="text-[10px] font-mono uppercase font-bold tracking-wider">
               Languages
@@ -102,8 +103,8 @@ export default function SkillsPage() {
           <p className="text-[11px] text-muted">C, C++, Rust, Python, TS</p>
         </div>
 
-        <div className="p-4 rounded-xl border border-purple-500/20 bg-purple-500/5 dark:bg-purple-950/20 space-y-1">
-          <div className="flex items-center justify-between text-purple-600 dark:text-purple-400">
+        <div className="p-4 rounded-2xl border border-[#171e19]/15 dark:border-[#b7c6c2]/15 bg-card space-y-1 transition-all hover:border-[#ffe17c]">
+          <div className="flex items-center justify-between text-[#ffe17c]">
             <Cpu className="w-4 h-4" />
             <span className="text-[10px] font-mono uppercase font-bold tracking-wider">
               AI / Inference
@@ -115,8 +116,8 @@ export default function SkillsPage() {
           <p className="text-[11px] text-muted">Sub-1 GFLOP &amp; INT8 Edge</p>
         </div>
 
-        <div className="p-4 rounded-xl border border-emerald-500/20 bg-emerald-500/5 dark:bg-emerald-950/20 space-y-1">
-          <div className="flex items-center justify-between text-emerald-600 dark:text-emerald-400">
+        <div className="p-4 rounded-2xl border border-[#171e19]/15 dark:border-[#b7c6c2]/15 bg-card space-y-1 transition-all hover:border-[#ffe17c]">
+          <div className="flex items-center justify-between text-[#ffe17c]">
             <Server className="w-4 h-4" />
             <span className="text-[10px] font-mono uppercase font-bold tracking-wider">
               Kernel &amp; Systems
@@ -128,8 +129,8 @@ export default function SkillsPage() {
           <p className="text-[11px] text-muted">Syscall monitoring &amp; MQTT</p>
         </div>
 
-        <div className="p-4 rounded-xl border border-cyan-500/20 bg-cyan-500/5 dark:bg-cyan-950/20 space-y-1">
-          <div className="flex items-center justify-between text-cyan-600 dark:text-cyan-400">
+        <div className="p-4 rounded-2xl border border-[#171e19]/15 dark:border-[#b7c6c2]/15 bg-card space-y-1 transition-all hover:border-[#ffe17c]">
+          <div className="flex items-center justify-between text-[#ffe17c]">
             <Binary className="w-4 h-4" />
             <span className="text-[10px] font-mono uppercase font-bold tracking-wider">
               Competencies
@@ -142,15 +143,20 @@ export default function SkillsPage() {
         </div>
       </div>
 
+      {/* Production Systems Showcase Banner */}
+      <div>
+        <ProductSpotlightBanner variant="compact" targetProductSlug="keynix" />
+      </div>
+
       {/* Interactive Domain Filter Pill Bar */}
       <div className="flex items-center justify-start gap-1.5 sm:gap-2 overflow-x-auto pb-2 scrollbar-none">
         <button
           type="button"
           onClick={() => setSelectedCategory("All")}
           className={cn(
-            "px-4 py-2 rounded-full text-xs font-medium transition-all shrink-0 select-none",
+            "px-4 py-2 rounded-full text-xs font-semibold transition-all shrink-0 select-none",
             selectedCategory === "All"
-              ? "bg-primary text-white shadow-xs font-semibold"
+              ? "bg-[#ffe17c] text-[#171e19] shadow-xs font-bold"
               : "bg-surface-muted border border-border/80 text-muted hover:text-foreground hover:bg-surface"
           )}
         >
@@ -165,9 +171,9 @@ export default function SkillsPage() {
               type="button"
               onClick={() => setSelectedCategory(cat.category)}
               className={cn(
-                "px-3.5 py-2 rounded-full text-xs font-medium transition-all shrink-0 select-none flex items-center gap-1.5",
+                "px-3.5 py-2 rounded-full text-xs font-semibold transition-all shrink-0 select-none flex items-center gap-1.5",
                 isSelected
-                  ? "bg-primary text-white shadow-xs font-semibold"
+                  ? "bg-[#ffe17c] text-[#171e19] shadow-xs font-bold"
                   : "bg-surface-muted border border-border/80 text-muted hover:text-foreground hover:bg-surface"
               )}
             >
@@ -176,7 +182,7 @@ export default function SkillsPage() {
                 className={cn(
                   "text-[10px] px-1.5 py-0.2 rounded-full",
                   isSelected
-                    ? "bg-white/20 text-white font-mono"
+                    ? "bg-[#171e19]/15 text-[#171e19] font-mono font-bold"
                     : "bg-surface border border-border/60 text-muted font-mono"
                 )}
               >
@@ -373,7 +379,7 @@ export default function SkillsPage() {
         </Link>
         <Link
           href="/achievements"
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-white bg-primary hover:bg-primary-hover px-4 py-2 rounded-lg shadow-xs transition-colors"
+          className="inline-flex items-center gap-1.5 text-sm font-bold text-[#171e19] bg-[#ffe17c] hover:bg-[#f5d45d] px-4 py-2 rounded-xl shadow-xs transition-all hover:scale-105"
         >
           <span>View Achievements &amp; Contests</span>
           <ArrowRight className="w-4 h-4" />

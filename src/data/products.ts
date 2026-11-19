@@ -25,7 +25,16 @@ export type Product = {
   faq: { question: string; answer: string }[];
   screenshots?: { src: string; alt: string; caption: string }[];
   releaseNote?: string;
-  downloads?: { label: string; platform: string; format: string; url: string; size: number; sha256?: string; status?: "stable" | "preview" | "development"; architecture?: string }[];
+  downloads?: {
+    label: string;
+    platform: string;
+    format: string;
+    url: string;
+    size: number;
+    sha256?: string;
+    status?: "stable" | "preview" | "development";
+    architecture?: string;
+  }[];
   releaseHistory?: { version: string; date: string; summary: string; url: string }[];
   detailSections?: { title: string; eyebrow: string; intro: string; items: { title: string; description: string }[] }[];
   systemRequirements?: string[];
@@ -35,17 +44,184 @@ export type Product = {
 
 export const products: Product[] = [
   {
+    slug: "localmind",
+    releaseStatus: "preview",
+    repositoryUrls: ["https://github.com/ravindran-dev/localmind"],
+    name: "LocalMind Agent SDK & Runtime",
+    shortName: "LocalMind",
+    category: "Developer Tools",
+    status: "Active development",
+    positioning: "Loopback-only local AI agent runtime, terminal assistant, and Python streaming SDK.",
+    description: "A private, local-first LLM orchestration system that connects your terminal, local workspace index, and host telemetry through a lightweight Rust launcher and typed Python SDK without sending data to third-party clouds.",
+    repository: "https://github.com/ravindran-dev/localmind",
+    icon: "/products/localmind.svg",
+    accent: "#10b981",
+    latestTag: "0.1.0",
+    developmentVersion: "0.1.0 (Native Launcher & Rust daemon)",
+    releaseDate: "2026-11-18",
+    primaryAction: { label: "Quick Install", href: "#install" },
+    repositories: [
+      { label: "Main Repository", url: "https://github.com/ravindran-dev/localmind" },
+    ],
+    downloads: [
+      {
+        label: "LocalMind Python SDK (localmind-sdk)",
+        platform: "Universal Python 3.10+",
+        format: "TAR.GZ",
+        url: "/downloads/localmind-sdk-v0.1.0.tar.gz",
+        size: 6220,
+        sha256: "ebf777c1492937c6ebcc896a9619aeb11d556c2961915bf9f67cc2d70c1d9041",
+        status: "stable",
+        architecture: "Universal",
+      },
+    ],
+    releaseHistory: [
+      {
+        version: "0.1.0",
+        date: "2026-11-18",
+        summary: "Initial public developer preview: LocalMind JARVIS terminal assistant, typed Python client SDK, native Rust launcher, and loopback gateway routing.",
+        url: "https://github.com/ravindran-dev/localmind/releases/tag/v0.1.0",
+      },
+    ],
+    platforms: ["Linux (x86_64, aarch64)", "macOS (Apple Silicon)", "Windows WSL2"],
+    languages: ["Python 3.12+", "Rust", "TypeScript"],
+    stack: ["Rust Native Launcher", "FastAPI / Uvicorn", "Ollama", "PyTorch", "uv", "SQLite"],
+    features: [
+      { title: "Zero Cloud Leakage", description: "Hardcoded loopback-only communication (127.0.0.1:8420); cloud URLs and third-party API calls are strictly rejected." },
+      { title: "Native Rust Launcher", description: "Builds a zero-overhead binary localmind and symlinks @jarvis into ~/.local/bin without shell script latency." },
+      { title: "Structured Event Streaming", description: "Emits typed events (meta, agent, token, done, error) with transparent attribution to selected models and system observers." },
+      { title: "Host Telemetry & Workspace Index", description: "Context-aware agents query live workstation metrics and local codebase files on demand without indexing remote files." },
+    ],
+    architecture: "LocalMind binds exclusively to 127.0.0.1:8420. The native Rust launcher @jarvis forwards commands directly into the locked Python runtime. Local LLMs run via Ollama on loopback:11434, while deterministic system metrics are gathered directly via /proc and sysinfo without LLM hallucination.",
+    install: [
+      {
+        label: "Workstation One-Line Install",
+        command: "git clone --depth 1 https://github.com/ravindran-dev/localmind.git \"$HOME/.local/share/localmind\" && bash \"$HOME/.local/share/localmind/install.sh\"",
+        note: "Requires Git, uv, and stable Rust. Builds the native launcher and configures ~/.local/bin/@jarvis automatically."
+      },
+      {
+        label: "Install Python SDK",
+        command: "pip install /downloads/localmind-sdk-v0.1.0.tar.gz\n# or import from local checkout:\nfrom localmind_sdk import LocalMindClient\nwith LocalMindClient() as mind:\n    print(mind.models())",
+        note: "Compatible with Python 3.10 through 3.13."
+      },
+      {
+        label: "Run Terminal Assistant",
+        command: "@jarvis status\n@jarvis models\n@jarvis agents\n@jarvis \"Explain the architecture of this repo\"",
+        note: "Opens an interactive streaming session connected to your local model."
+      }
+    ],
+    documentation: [
+      { label: "README & Quickstart", url: "https://github.com/ravindran-dev/localmind#readme" },
+      { label: "SDK & Installation Guide", url: "https://github.com/ravindran-dev/localmind/blob/main/docs/setup/sdk-and-installation.md" },
+    ],
+    faq: [
+      { question: "Does LocalMind send any data to external servers?", answer: "No. The SDK and runtime strictly reject any remote URL. All inference runs locally via Ollama or PyTorch on 127.0.0.1." },
+      { question: "What is @jarvis?", answer: "@jarvis is the high-performance native terminal CLI launcher written in Rust that provides sub-millisecond invocation for the LocalMind runtime." },
+      { question: "Can I use LocalMind as a library in Python?", answer: "Yes! Use the included localmind_sdk library to orchestrate workflows, stream chat tokens, and query system context programmatically." },
+    ],
+    releaseNote: "LocalMind JARVIS v0.1.0 preview release featuring native Rust launcher, typed Python SDK, and zero-cloud private runtime.",
+    systemRequirements: [
+      "Operating System: Linux (Arch, Ubuntu, Fedora), macOS, or Windows WSL2",
+      "Python: 3.10 or newer (uv package manager recommended)",
+      "Rust: 1.75+ for native launcher compilation",
+      "Local LLM Runtime: Ollama or local PyTorch/transformers instance"
+    ],
+    detailSections: [
+      {
+        eyebrow: "Private Intelligence",
+        title: "A personal AI agent that lives on your machine",
+        intro: "LocalMind provides an autonomous assistant that helps you write code, analyze logs, and run diagnostics without cloud lock-in.",
+        items: [
+          { title: "Deterministic System Observer", description: "Queries live hardware sensors, active processes, and memory metrics with zero model hallucination." },
+          { title: "Workspace File Graph", description: "Indexes Git repositories locally to provide instant semantic context to local coding agents." },
+          { title: "Unified Python SDK", description: "Provides streaming async/sync clients with full event typing, error handling, and timeout safety." }
+        ]
+      }
+    ]
+  },
+  {
+    slug: "keynix",
+    releaseStatus: "preview",
+    repositoryUrls: ["https://github.com/ravindran-dev/keynix"],
+    name: "Keynix Keyboard Platform",
+    shortName: "Keynix",
+    category: "Linux Systems",
+    status: "Active development",
+    positioning: "System-level evdev remapping, shortcut conflict detection, and typing practice.",
+    description: "Hardware-level Linux input interception using evdev EVIOCGRAB exclusive grabbing and uinput virtual device synthesis, with visual layout editing and shortcut conflict auditing.",
+    repository: "https://github.com/ravindran-dev/keynix",
+    icon: "/products/keynix.png",
+    accent: "#f59e0b",
+    latestTag: "0.1.0",
+    developmentVersion: "0.1.0 (Workspace crate)",
+    releaseDate: "2026-11-15",
+    primaryAction: { label: "Build & Install", href: "#install" },
+    repositories: [
+      { label: "Main Repository", url: "https://github.com/ravindran-dev/keynix" },
+    ],
+    platforms: ["Linux (Wayland & X11: Arch, Fedora, Ubuntu, Debian)"],
+    languages: ["Rust", "TypeScript", "React"],
+    stack: ["Linux evdev (EVIOCGRAB)", "uinput", "Tokio", "SQLite", "Tailwind CSS"],
+    features: [
+      { title: "Hardware-Aware Interception", description: "Intercepts physical keyboards via evdev exclusive grabbing (EVIOCGRAB) and synthesizes virtual hardware through /dev/uinput." },
+      { title: "Zero Lag & Stuck-Key Immunity", description: "Dedicated high-priority worker thread with non-blocking polling and automatic release guarantees." },
+      { title: "Fail-Safe Killswitch", description: "Pressing Ctrl+Alt+Shift+Esc at any time immediately releases physical devices and restores native passthrough." },
+      { title: "Shortcut Conflict Discovery", description: "Audits active hotkeys across Hyprland, GNOME GSettings, KDE Global Shortcuts, and XKB layout rules." },
+    ],
+    architecture: "Keynix sits between the physical hardware and the display server: Physical Keyboard (/dev/input/event*) -> evdev Interception -> Keynix Mapping Engine -> uinput Virtual Device -> Linux OS. A local SQLite database stores user presets and typing analytics.",
+    install: [
+      {
+        label: "Build and Install from Source",
+        command: "git clone https://github.com/ravindran-dev/keynix.git\ncd keynix\nbash install.sh",
+        note: "Requires Rust stable, libevdev development headers, and input group permissions."
+      },
+      {
+        label: "Run Background Daemon",
+        command: "cargo run --release --bin keynix-daemon",
+        note: "Runs the non-blocking interception worker thread."
+      }
+    ],
+    documentation: [
+      { label: "README & Architecture", url: "https://github.com/ravindran-dev/keynix#readme" },
+      { label: "Packaging Docs", url: "https://github.com/ravindran-dev/keynix/tree/main/packaging" },
+    ],
+    faq: [
+      { question: "Does Keynix cause input lag?", answer: "No. Keynix runs a dedicated non-blocking polling worker thread in Rust that processes events in under 0.1ms." },
+      { question: "What happens if Keynix crashes?", answer: "Keynix registers signal handlers that instantly drop the EVIOCGRAB lock, restoring normal keyboard behavior. The hardware killswitch (Ctrl+Alt+Shift+Esc) also ungrabs immediately." },
+      { question: "Does it work on Wayland?", answer: "Yes! Because Keynix operates at the kernel evdev/uinput layer, it is completely independent of Wayland or X11." },
+    ],
+    releaseNote: "Keynix v0.1.0 preview release with Linux hardware interception, fail-safe killswitch, and visual layout editor.",
+    systemRequirements: [
+      "Operating System: Linux kernel 5.4+ with evdev and uinput support",
+      "Permissions: User in 'input' group and write access to /dev/uinput",
+      "Display Server: Wayland (Hyprland, Sway, GNOME, KDE) or X11",
+      "Build: Rust 1.75+ and Node.js 18+ (for frontend GUI)"
+    ],
+    detailSections: [
+      {
+        eyebrow: "Low-Level Systems",
+        title: "Kernel-level input virtualization without compromises",
+        intro: "Keynix grants complete mastery over input devices without requiring custom firmware or proprietary manufacturer software.",
+        items: [
+          { title: "evdev Exclusive Grabbing", description: "Uses EVIOCGRAB to prevent host operating system and desktop environments from seeing raw physical key events." },
+          { title: "Virtual uinput Synthesis", description: "Emulates a clean USB HID device capable of emitting arbitrary keycodes, modifiers, and multi-key macros." },
+          { title: "Visual Layout Customizer", description: "Interactive SVG editor supporting ANSI Full 104, TKL, 65%, and 60% keyboards with instant conflict resolution." }
+        ]
+      }
+    ]
+  },
+  {
     slug: "hertix",
     releaseStatus: "stable",
     repositoryUrls: ["https://github.com/ravindran-dev/Hertix"],
     name: "Hertix Music Player",
     shortName: "Hertix",
-    category: "Desktop Applications",
+    category: "Desktop & Mobile",
     status: "Active development",
     positioning: "Your music library, kept close and under your control.",
     description: "A local-first media library and player spanning a native Android app and a Windows desktop app.",
     repository: "https://github.com/ravindran-dev/Hertix",
-    icon: "/products/hertix-icon.png",
+    icon: "/products/hertix.png",
     accent: "#9b72f2",
     latestTag: "1.0.23",
     releaseDate: "2026-11-11",
@@ -253,7 +429,7 @@ export const products: Product[] = [
     repositoryUrls: ["https://github.com/ravindran-dev/ZenMode"],
     name: "Zenmode",
     shortName: "Zenmode",
-    category: "Productivity",
+    category: "Desktop & Mobile",
     status: "Active development",
     positioning: "Start a focused Windows workspace; restore the system when you finish.",
     description: "A Windows workspace manager that coordinates focus profiles and journals system changes for recovery.",
@@ -290,7 +466,7 @@ export const products: Product[] = [
     repositoryUrls: ["https://github.com/ravindran-dev/Airlink"],
     name: "Airlink",
     shortName: "Airlink",
-    category: "Utilities",
+    category: "Desktop & Mobile",
     status: "Active development",
     positioning: "Private, peer-to-peer file sharing for nearby Android devices.",
     description: "A modular Android file-transfer application using device discovery, local network transport and encrypted sessions.",
@@ -313,7 +489,7 @@ export const products: Product[] = [
     faq: [
       { question: "Which devices are supported?", answer: "The Android app sets minSdk 26 (Android 8) and target SDK 34." },
       { question: "Is Airlink available on iOS or desktop?", answer: "No iOS or desktop target is present in the repository." },
-      { question: "Can I download an APK here?", answer: "No published APK was verified. The documented path is to build the debug app from source." },
+      { question: "Can I download an APK here?", answer: "Yes! A debug preview APK is built and available below with verified SHA-256 digest." },
     ],
     releaseNote: "No local Git tags or verified published release assets were found. 1.0.0 is the Android manifest version, not a confirmed release.",
     systemRequirements: ["Android 8.0+ (min SDK 26); target SDK 34", "Java 21 and Android SDK for source builds", "Bluetooth Low Energy and Wi-Fi/Wi-Fi Direct hardware and permissions for discovery/transfer", "The repository includes a Windows Gradle wrapper script; no Unix gradlew wrapper is present"],

@@ -16,9 +16,9 @@ export function Card({
   return (
     <div
       className={cn(
-        "rounded-xl border border-border bg-card p-6 text-foreground transition-all duration-200",
+        "rounded-2xl border border-[#171e19]/10 dark:border-[#b7c6c2]/15 bg-white dark:bg-[#202a24] p-6 text-foreground transition-all duration-300 [transition-timing-function:cubic-bezier(0.4,0,0.2,1)]",
         hoverable &&
-          "hover:border-slate-300 dark:hover:border-zinc-700 hover:shadow-md hover:shadow-slate-200/50 dark:hover:shadow-black/40 hover:-translate-y-0.5",
+          "hover:border-[#ffe17c]/80 hover:shadow-xl hover:-translate-y-1",
         className
       )}
       {...props}
